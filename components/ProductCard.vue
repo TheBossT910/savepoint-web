@@ -10,7 +10,7 @@
             <div class="bg-gray-400 w-[250px] h-[370px] rounded-t-[12px]">
                 <img 
                 src="https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover rounded-t-[12px]"
                 >
             </div>
 
