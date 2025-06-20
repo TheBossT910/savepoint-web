@@ -7,8 +7,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Link } from './types';
+
 // Navbar Links
-const links = [
+const links: Link[] = [
     { link: '/', name: 'Home' }, 
     { link: '/login', name: 'Sign In'}
 ]

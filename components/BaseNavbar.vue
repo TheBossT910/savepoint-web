@@ -1,5 +1,7 @@
+<!-- Taha Rashid -->
+<!-- Jun 19, 2025 -->
+
 <template>
-    <!-- TODO: programatically add links -->
     <div class="navbar bg-base-300 shadow-sm sticky top-0">
         <div class="navbar-start">
             <div class="dropdown">
@@ -61,8 +63,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Link } from '~/types';
+
 // creating props
 const props = defineProps<{
-    links: {link: string, name: string}[]
+    links: Link[]
 }>()
 </script>
