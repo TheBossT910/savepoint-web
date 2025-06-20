@@ -5,7 +5,7 @@
     <div>
         <!-- Outer Product Card -->
         <!-- W-270 -->
-        <div class="bg-gray-300 border-gray-300 w-[270px] h-[510px] border-[10px] rounded-[12px]" @click="goToProduct">
+        <div class="bg-gray-200 border-gray-200 w-[270px] h-[510px] border-[10px] rounded-[12px]" @click="goToProduct">
             <!-- Image -->
             <div class="bg-gray-400 w-[250px] h-[370px] rounded-t-[12px]">
                 <img 
