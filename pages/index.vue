@@ -39,7 +39,7 @@ const detail2: ProductDetail = {
     platformLogos: [
         'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
     ],
-    generes: ['Action', 'Multiplayer', 'Racing', 'Open World']
+    generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
 }
 
 
