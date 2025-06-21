@@ -4,80 +4,82 @@
 <template>
     <!-- Outer Inventory Card -->
     <div class="bg-gray-50 p-[10px] rounded-[12px] shadow-xl/25" @click="goToProduct">
-        <div class="relative bg-gray-400 w-full aspect-[3/4] rounded-t-[12px]">
+        <div class="relative bg-gray-400 aspect-[3/4] rounded-t-[12px]">
             <!-- Image -->
             <img 
             :src="props.coverImage"
             class="w-full aspect-[3/4] object-cover rounded-t-[12px]"
             >
 
-            <!-- Top Left -->
-            <div class="flex flex-col absolute top-[16px] left-[16px] gap-y-[10px]">
-                <!-- New -->
-                <div class="flex px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] w-[110px] h-[22px] rounded-[12px] dm-sans-bold text-[12px]">
-                    <div class="mr-auto my-auto">
-                        New
+            <div class="flex absolute top-[16px] left-0 right-0 pl-[16px] justify-between">
+                <!-- Top Left -->
+                <div class="flex flex-col gap-y-[10px] dm-sans-bold text-[14px] md:text-[10px] lg:text-[14px]">
+                    <!-- New -->
+                    <div class="flex justify-between px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] max-w-[135px] h-[22px] rounded-[12px]">
+                        <div class="mr-auto my-auto">
+                            New
+                        </div>
+                        <div class="pl-2 ml-auto my-auto">
+                            ###
+                        </div>
                     </div>
-                    <div class="ml-auto my-auto">
-                        ###
+
+                    <!-- Complete -->
+                    <div class="flex justify-between px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] max-w-[135px] h-[22px] rounded-[12px]">
+                        <div class="mr-auto my-auto">
+                            Complete
+                        </div>
+                        <div class="pl-2 ml-auto my-auto">
+                            ###
+                        </div>
+                    </div>
+
+                    <!-- Loose -->
+                    <div class="flex px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] max-w-[135px] h-[22px] rounded-[12px]">
+                        <div class="mr-auto my-auto">
+                            Loose
+                        </div>
+                        <div class="pl-2 ml-auto my-auto">
+                            ###
+                        </div>
                     </div>
                 </div>
 
-                <!-- Complete -->
-                <div class="flex px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] w-[110px] h-[22px] rounded-[12px] dm-sans-bold text-[12px]">
-                    <div class="mr-auto my-auto">
-                        Complete
-                    </div>
-                    <div class="ml-auto my-auto">
-                        ###
-                    </div>
-                </div>
-
-                <!-- Loose -->
-                <div class="flex px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] w-[110px] h-[22px] rounded-[12px] dm-sans-bold text-[12px]">
-                    <div class="mr-auto my-auto">
-                        Loose
-                    </div>
-                    <div class="ml-auto my-auto">
-                        ###
-                    </div>
-                </div>
-            </div>
-
-            <!-- Top Right -->
-            <div class="flex flex-col absolute top-[16px] right-0 gap-y-[10px]">
-                <!-- Quick Add -->
-                <div class="flex bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] w-[82px] h-[84px] rounded-l-[12px] dm-sans-bold text-[12px]">
-                    <div class="m-auto">
-                        Quick Add + 
+                <!-- Top Right -->
+                <div class="flex gap-y-[10px] dm-sans-bold text-[10px] md:text-[12px] lg:text-[12px]">
+                    <!-- Quick Add -->
+                    <div class="flex bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] max-w-[82px] h-[84px] rounded-l-[12px]">
+                        <div class="m-auto px-1">
+                            Quick Add + 
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Bottom -->
-            <div class="flex flex-col absolute bottom-[10px] left-0 right-0 px-[16px] gap-y-[10px]">
+            <div class="flex flex-col absolute bottom-[10px] left-0 right-0 px-[16px] md:px-[10px] gap-y-[10px] dm-sans-bold text-[22px] md:text-[14px] lg:text-[18px] xl:text-[22px]">
                 <!-- Excellent -->
-                <div class="flex justify-between dm-sans-bold text-[20px]">
-                    <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[135px] h-[32px] rounded-[12px]">
+                <div class="flex justify-between">
+                    <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[135px] rounded-[12px]">
                         <div class="mr-auto my-auto ">
                             Excellent
                         </div>
                     </div>
-                    <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[68px] h-[32px] rounded-[12px]">
+                    <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
                     </div>                    
                 </div>
 
-                <!-- Very Good -->
-                <div class="flex justify-between dm-sans-bold text-[20px]">
-                    <div class="px-2 bg-green-500/60 border-[1px] border-green-400/70 backdrop-blur-[5px] w-[135px] h-[32px] rounded-[12px]">
+                <!-- Great -->
+                <div class="flex justify-between">
+                    <div class="px-2 bg-green-500/60 border-[1px] border-green-400/70 backdrop-blur-[5px] w-[135px] rounded-[12px]">
                         <div class="mr-auto my-auto ">
-                            Very Good
+                            Great   
                         </div>
                     </div>
-                    <div class="px-2 bg-green-500/60 border-[1px] border-green-400/70 backdrop-blur-[5px] w-[68px] h-[32px] rounded-[12px]">
+                    <div class="px-2 bg-green-500/60 border-[1px] border-green-400/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
@@ -85,13 +87,13 @@
                 </div>
 
                 <!-- Good -->
-                <div class="flex justify-between dm-sans-bold text-[20px]">
-                    <div class="px-2 bg-yellow-500/60 border-[1px] border-yellow-400/70 backdrop-blur-[5px] w-[135px] h-[32px] rounded-[12px]">
+                <div class="flex justify-between">
+                    <div class="px-2 bg-yellow-500/60 border-[1px] border-yellow-400/70 backdrop-blur-[5px] w-[135px] rounded-[12px]">
                         <div class="mr-auto my-auto ">
                             Good
                         </div>
                     </div>
-                    <div class="px-2 bg-yellow-500/60 border-[1px] border-yellow-400/70 backdrop-blur-[5px] w-[68px] h-[32px] rounded-[12px]">
+                    <div class="px-2 bg-yellow-500/60 border-[1px] border-yellow-400/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
@@ -99,13 +101,13 @@
                 </div>
 
                 <!-- Acceptable -->
-                <div class="flex justify-between dm-sans-bold text-[20px]">
-                    <div class="px-2 bg-red-600/60 border-[1px] border-red-500/70 backdrop-blur-[5px] w-[135px] h-[32px] rounded-[12px]">
+                <div class="flex justify-between">
+                    <div class="px-2 bg-red-600/60 border-[1px] border-red-500/70 backdrop-blur-[5px] w-[135px] rounded-[12px]">
                         <div class="mr-auto my-auto ">
-                            Acceptable
+                            Acc.
                         </div>
                     </div>
-                    <div class="px-2 bg-red-600/60 border-[1px] border-red-500/70 backdrop-blur-[5px] w-[68px] h-[32px] rounded-[12px]">
+                    <div class="px-2 bg-red-600/60 border-[1px] border-red-500/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
                         <div class="ml-auto my-auto">
                             ###
                         </div>

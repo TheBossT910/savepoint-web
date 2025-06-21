@@ -2,19 +2,19 @@
     <div>
         <div class="mx-20 mt-10">
             <!-- Products -->
-            <div class="flex items-stretch gap-x-10">
-                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
-                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto w-[300px]"/>
-                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
-                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto w-[300px]"/>                
+            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10">
+                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
+                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
+                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
+                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" />                
             </div>
 
             <!-- Inventory -->
-            <div class="mt-10 flex items-stretch gap-x-10">
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10">
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
             </div>
         </div>
     </div>
