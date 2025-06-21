@@ -1,10 +1,16 @@
 <template>
   <div>
-    <BaseNavbar :links = links />
+    <div class="fixed w-full z-50">
+      <BaseNavbar :links = links />
+    </div>
+   
     <!-- This displays our current pages -->
-    <NuxtPage />
+    <div>
+      <NuxtPage />
+    </div>
   </div>
 </template>
+
 
 <script setup lang="ts">
 import type { Link } from './types';
