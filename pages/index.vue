@@ -2,9 +2,11 @@
     <div>
         <!-- Products -->
         <div class="mx-20 mt-10">
-            <div class="flex">
-                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto"/>
-                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto"/>
+            <div class="flex items-stretch gap-x-10">
+                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
+                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto w-[300px]"/>
+                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
+                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto w-[300px]"/>                
             </div>
         </div>
     </div>

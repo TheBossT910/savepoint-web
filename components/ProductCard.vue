@@ -2,18 +2,18 @@
 <!-- June 19, 2025 -->
 
 <template>
-    <div>
+    <!-- <div> -->
         <!-- Outer Product Card -->
-        <div class="bg-gray-50 border-gray-50 w-[270px] min-h-[510px] border-[10px] rounded-[12px] shadow-xl/25" @click="goToProduct">
-            <div class="relative bg-gray-400 w-[250px] min-h-[370px] rounded-t-[12px]">
+        <div class="bg-gray-50 p-[10px] rounded-[12px] shadow-xl/25" @click="goToProduct">
+            <div class="relative bg-gray-400 w-full aspect-[3/4] rounded-t-[12px]">
                 <!-- Image -->
                 <img 
                 :src="props.coverImage"
-                class="w-full h-full object-cover rounded-t-[12px]"
+                class="w-full aspect-[3/4] object-cover rounded-t-[12px]"
                 >
 
                 <!-- Buy button -->
-                <div class="flex absolute bottom-0 bg-green-500/60 border-[1px] border-b-0 border-green-400/70 backdrop-blur-[5px] dm-sans-bold text-[12px] w-[250px] h-[48px] rounded-t-[12px]">
+                <div class="flex absolute bottom-0 bg-green-500/60 border-[1px] border-b-0 border-green-400/70 backdrop-blur-[5px] dm-sans-bold text-[12px] w-full h-[48px] rounded-t-[12px]">
                     <div class="m-auto">
                         $ Buy
                     </div>
@@ -35,16 +35,16 @@
             </div>
 
             <!-- Content -->
-            <div class="w-[250px] min-h-[120px] flex flex-col gap-y-[12px]">
-                <div class="text-gray-400 dm-sans-bold w-[250px] min-h-[16px] mt-[12px] text-[12px]">
+            <div class="w-full min-h-[120px] flex flex-col gap-y-[12px]">
+                <div class="text-gray-400 dm-sans-bold w-full min-h-[16px] mt-[12px] text-[12px]">
                     {{ props.detail.developers.join(', ') }}, {{ props.detail.year }}
                 </div>
 
-                <div class="text-gray-900 dm-sans-bold w-[250px] min-h-[23px] text-[18px]">
+                <div class="text-gray-900 dm-sans-bold w-full min-h-[23px] text-[18px]">
                     {{ props.detail.title }}
                 </div>
 
-                <div class="w-[250px] h-[17px] flex">
+                <div class="w-full flex flex-wrap gap-x-2 gap-y-2">
                      <img
                      v-for="logo in props.detail.platformLogos" :key="logo" 
                      :src="logo"
@@ -52,12 +52,12 @@
                      >
                 </div>
 
-                <div class="text-gray-400 dm-sans-bold w-[250px] min-h-[16px] text-[12px]">
+                <div class="text-gray-400 dm-sans-bold w-full min-h-[16px] text-[12px]">
                     {{ props.detail.generes.join(', ') }}
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script setup lang="ts">
