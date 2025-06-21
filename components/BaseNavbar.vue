@@ -2,7 +2,7 @@
 <!-- Jun 19, 2025 -->
 
 <template>
-    <div class="navbar bg-base-300 shadow-sm sticky top-0">
+    <div class="navbar bg-base-300 shadow-sm sticky top-0 z-50">
         <div class="navbar-start">
             <div class="dropdown">
                 <button class="btn btn-sm btn-ghost mr-1 lg:hidden" tabindex="0">
