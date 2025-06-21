@@ -4,7 +4,7 @@
 <template>
     <!-- Outer Product Card -->
     <div class="bg-gray-50 p-[10px] rounded-[12px] shadow-xl/25" @click="goToProduct">
-        <div class="relative bg-gray-400 w-full aspect-[3/4] rounded-t-[12px]">
+        <div class="relative bg-gray-400 aspect-[3/4] rounded-t-[12px]">
             <!-- Image -->
             <img 
             :src="props.coverImage"
