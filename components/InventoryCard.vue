@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- Top Right -->
-                <div class="flex gap-y-[10px] dm-sans-bold text-[10px] md:text-[12px] lg:text-[12px]">
+                <div class="flex gap-y-[10px] dm-sans-bold text-[10px] md:text-[12px] ml-2">
                     <!-- Quick Add -->
                     <div class="flex bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] max-w-[82px] h-[84px] rounded-l-[12px]">
                         <div class="m-auto px-1">
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Bottom -->
-            <div class="flex flex-col absolute bottom-[10px] left-0 right-0 px-[16px] md:px-[10px] gap-y-[10px] dm-sans-bold text-[22px] md:text-[14px] lg:text-[18px] xl:text-[22px]">
+            <div class="flex flex-col absolute bottom-[10px] left-0 right-0 px-[16px] md:px-[10px] gap-y-[10px] dm-sans-bold text-[18px] md:text-[14px] lg:text-[18px]">
                 <!-- Excellent -->
                 <div class="flex justify-between">
                     <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[135px] rounded-[12px]">
@@ -65,7 +65,7 @@
                             Excellent
                         </div>
                     </div>
-                    <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
+                    <div class="px-2 bg-blue-600/60 border-[1px] border-blue-500/70 backdrop-blur-[5px] w-[68px] rounded-[12px] ml-2">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
@@ -79,7 +79,7 @@
                             Great   
                         </div>
                     </div>
-                    <div class="px-2 bg-green-500/60 border-[1px] border-green-400/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
+                    <div class="px-2 bg-green-500/60 border-[1px] border-green-400/70 backdrop-blur-[5px] w-[68px] rounded-[12px] ml-2">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
@@ -93,7 +93,7 @@
                             Good
                         </div>
                     </div>
-                    <div class="px-2 bg-yellow-500/60 border-[1px] border-yellow-400/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
+                    <div class="px-2 bg-yellow-500/60 border-[1px] border-yellow-400/70 backdrop-blur-[5px] w-[68px] rounded-[12px] ml-2">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
@@ -107,7 +107,7 @@
                             Acc.
                         </div>
                     </div>
-                    <div class="px-2 bg-red-600/60 border-[1px] border-red-500/70 backdrop-blur-[5px] w-[68px] rounded-[12px]">
+                    <div class="px-2 bg-red-600/60 border-[1px] border-red-500/70 backdrop-blur-[5px] w-[68px] rounded-[12px] ml-2">
                         <div class="ml-auto my-auto">
                             ###
                         </div>
