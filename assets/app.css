@@ -80,3 +80,11 @@
   font-weight: 700;
   font-style: normal;
 }
+
+.font-outline {
+  text-shadow:
+      -1px -1px 0 rgba(106, 114, 130, 0.60),
+       1px -1px 0 rgba(106, 114, 130, 0.60),
+      -1px  1px 0 rgba(106, 114, 130, 0.60),
+       1px  1px 0 rgba(106, 114, 130, 0.60);
+}
