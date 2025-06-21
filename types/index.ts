@@ -5,3 +5,11 @@ export interface Link {
     link: string
     name: string
 }
+
+export interface ProductDetail {
+    developers: string[]
+    year: number
+    title: string
+    platformLogos: string[]
+    generes: string[]
+}

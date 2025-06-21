@@ -9,7 +9,7 @@
             <div class="relative bg-gray-400 w-[250px] h-[370px] rounded-t-[12px]">
                 <!-- Image -->
                 <img 
-                src="https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429"
+                :src="props.coverImage"
                 class="w-full h-full object-cover rounded-t-[12px]"
                 >
 
@@ -38,38 +38,23 @@
             <!-- Content -->
             <div class="w-[250px] h-[120px] flex flex-col gap-y-[12px]">
                 <div class="text-gray-400 dm-sans-bold w-[250px], h-[16px] mt-[12px] text-[12px]">
-                    Atlus, 2024
+                    {{ props.detail.developers.join(', ') }}, {{ props.detail.year }}
                 </div>
 
                 <div class="text-gray-900 dm-sans-bold w-[250px] h-[23px] text-[18px]">
-                    Persona 3: Reload
+                    {{ props.detail.title }}
                 </div>
 
                 <div class="w-[250px] h-[17px] flex">
-                    <!-- TODO: Add logos -->
-                     <img 
-                     src="https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png"
-                     class="mx-auto h-[17px]"
-                     >
-
-                     <img 
-                     src="https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg"
-                     class="mx-auto h-[17px]"
-                     >
-
-                     <img 
-                     src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg"
-                     class="mx-auto h-[17px]"
-                     >
-
-                    <img 
-                     src="https://static-00.iconduck.com/assets.00/steam-icon-2026x2048-3b7rynay.png"
+                     <img
+                     v-for="logo in props.detail.platformLogos" :key="logo" 
+                     :src="logo"
                      class="mx-auto h-[17px]"
                      >
                 </div>
 
                 <div class="text-gray-400 dm-sans-bold w-[250px] h-[16px] text-[12px]">
-                    Action, Adventure, Horror
+                    {{ props.detail.generes.join(', ') }}
                 </div>
             </div>
         </div>
@@ -77,6 +62,15 @@
 </template>
 
 <script setup lang="ts">
+import type { Link, ProductDetail } from '~/types';
+
+const props = defineProps<{
+    coverImage: string,
+    isOwned: boolean,
+    isFavorite: boolean,
+    detail: ProductDetail
+}>()
+
 const goToProduct = () => {
     console.log('goToProduct clicked')
 }
