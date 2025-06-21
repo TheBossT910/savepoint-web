@@ -1,12 +1,20 @@
 <template>
     <div>
-        <!-- Products -->
         <div class="mx-20 mt-10">
+            <!-- Products -->
             <div class="flex items-stretch gap-x-10">
                 <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
                 <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto w-[300px]"/>
                 <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
                 <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" class="mx-auto w-[300px]"/>                
+            </div>
+
+            <!-- Inventory -->
+            <div class="mt-10 flex items-stretch gap-x-10">
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
+                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" class="mx-auto w-[300px]"/>
             </div>
         </div>
     </div>
