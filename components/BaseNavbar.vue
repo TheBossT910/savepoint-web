@@ -2,7 +2,7 @@
 <!-- Jun 19, 2025 -->
 
 <template>
-    <div class="navbar bg-base-300 shadow-sm sticky top-0 z-50">
+    <div class="navbar bg-base-300/0 backdrop-blur-[3px] shadow-sm sticky top-0 z-50">
         <div class="navbar-start">
             <div class="dropdown">
                 <button class="btn btn-sm btn-ghost mr-1 lg:hidden" tabindex="0">
@@ -10,11 +10,13 @@
                 </button>
                 <ul v-for="link in props.links" :key="link.name" class="menu dropdown-content gap-y-3 bg-base-300 mt-6 rounded-box shadow w-50" tabindex="0">
                     <li>
-                        <a class="link link-hover link-neutral-content" :href="link.link">{{ link.name }}</a>
+                        <a class="link link-hover link-neutral-content dm-sans-bold text-[16px] text-white font-outline" :href="link.link">{{ link.name }}</a>
                     </li>
                 </ul>
             </div>
-            <a href="#" class="font-semibold lg:ml-3">SavePoint</a>
+            <a href="#" class="dm-sans-bold text-[32px] text-white font-outline lg:ml-3">
+                SavePoint
+            </a>
         </div>
         <div class="navbar-center">
             <label class="hidden lg:flex input w-lg">
@@ -54,7 +56,7 @@
             <div class="hidden lg:flex">
                 <ul v-for="link in props.links" :key="link.name" class="menu menu-horizontal gap-x-3">
                     <li>
-                        <a class="link link-hover link-neutral-content" :href="link.link">{{ link.name }}</a>
+                        <a class="link link-hover link-neutral-content dm-sans-bold text-[16px] text-white font-outline" :href="link.link">{{ link.name }}</a>
                     </li>
                 </ul>
             </div>
