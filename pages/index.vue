@@ -97,6 +97,7 @@ import type { IProductCardProp } from '~/types'
 
 const productCardProps: IProductCardProp[] = [
     {
+        id: 0,
         coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
         isOwned: false,
         isFavorite: false,
@@ -112,6 +113,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Adventure', 'Horror']
     },
     {
+        id: 1,
         coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
         isOwned: true,
         isFavorite: true,
@@ -124,6 +126,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
     },
      {
+        id: 2,
         coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
         isOwned: false,
         isFavorite: false,
@@ -139,6 +142,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Adventure', 'Horror']
     },
     {
+        id: 3,
         coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
         isOwned: true,
         isFavorite: true,
@@ -151,6 +155,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
     },
      {
+        id: 4,
         coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
         isOwned: false,
         isFavorite: false,
@@ -166,6 +171,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Adventure', 'Horror']
     },
     {
+        id: 5,
         coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
         isOwned: true,
         isFavorite: true,
@@ -178,6 +184,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
     },
      {
+        id: 6,
         coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
         isOwned: false,
         isFavorite: false,
@@ -193,6 +200,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Adventure', 'Horror']
     },
     {
+        id: 7,
         coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
         isOwned: true,
         isFavorite: true,
@@ -205,6 +213,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
     },
      {
+        id: 8,
         coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
         isOwned: false,
         isFavorite: false,
@@ -220,6 +229,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Adventure', 'Horror']
     },
     {
+        id: 9,
         coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
         isOwned: true,
         isFavorite: true,
@@ -232,6 +242,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
     },
      {
+        id: 10,
         coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
         isOwned: false,
         isFavorite: false,
@@ -247,6 +258,7 @@ const productCardProps: IProductCardProp[] = [
         generes: ['Action', 'Adventure', 'Horror']
     },
     {
+        id: 11,
         coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
         isOwned: true,
         isFavorite: true,

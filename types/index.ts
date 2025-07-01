@@ -7,6 +7,7 @@ export interface Link {
 }
 
 export interface IProductCardProp {
+    id: number
     coverImage: string
     isOwned: boolean
     isFavorite: boolean

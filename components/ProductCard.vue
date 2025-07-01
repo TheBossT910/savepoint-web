@@ -2,8 +2,10 @@
 <!-- June 19, 2025 -->
 
 <template>
+    <!--     <div class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[10px] rounded-[12px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300" @click="goToProduct">
+ -->
     <!-- Outer Product Card -->
-    <div class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[10px] rounded-[12px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300" @click="goToProduct">
+    <div :id="`product-card-${props.id}`" class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[10px] rounded-[12px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform" @click="goToProduct">
         <div class="relative bg-gray-400 aspect-[3/4] rounded-t-[12px]">
             <!-- Image -->
             <img 
@@ -62,6 +64,40 @@
 import type { IProductCardProp } from '~/types';
 
 const props = defineProps<IProductCardProp>()
+let card: HTMLElement | null = null
+
+onMounted(() => {
+    card = document.getElementById(`product-card-${props.id}`)
+    // add event listeners
+    if (!card) return
+    card.addEventListener("mousemove", mouseMove)
+    card.addEventListener("mouseleave", mouseLeave)
+})
+
+onUnmounted(() => {
+    // remove listeners
+    if (!card) return 
+    card.removeEventListener('mousemove', mouseMove)
+    card.removeEventListener('mouseleave', mouseLeave)
+})
+
+const mouseMove = (e: MouseEvent) => {
+    if (!card) return
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left // x position within the card
+    const y = e.clientY - rect.top  // y position within the card
+
+    // Degrees to rotate by
+    const rotateX = ((y / rect.height) - 0.5) * 6
+    const rotateY = ((x / rect.width) - 0.5) * -6
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+}
+
+const mouseLeave = () => {
+    if (!card) return
+    card.style.transform = "rotateX(0deg) rotateY(0deg)"
+}
 
 const goToProduct = () => {
     console.log('goToProduct clicked')
