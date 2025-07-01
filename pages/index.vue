@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="relative py-20 px-10">
+        <div class="relative py-30 px-10">
             <!-- Splash image -->
             <img 
             src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
@@ -73,7 +73,7 @@
 
                 <!-- Platform badges-->
                 <div class="mt-10 flex gap-x-[16px]">
-                    <div v-for="logo in detail.platformLogos" :key="logo" class="bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] rounded-[6px] p-1">
+                    <div v-for="logo in platformLogos" :key="logo" class="bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] rounded-[6px] p-1">
                         <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
                             <img :src="logo" class="h-[17px]">
                         </div>
@@ -82,78 +82,190 @@
             </div>
         </div>
 
+        <!-- Products -->
         <div class="mx-20 my-10">
-            <!-- Products -->
-            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10">
-                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
-                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
-                <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2" />                
+            <div>
+                <div class="text-gray-900 dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Highest Rated</div>
+                <BaseCarousel :product-card-props="productCardProps" />
             </div>
-
-            <!-- Inventory -->
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10">
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-            </div>
-
-            <div class="flex overflow-hidden space-x-4 p-4">
-                <div v-for="(slide, index) in [0, 1, 2, 3]" :id="`slide${ index }`" :key="index" class="flex space-x-4">
-                    <div v-for="(product, productIndex) in [0, 1, 2]" :key="productIndex" class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scrolling -->
-            <button class="btn" @click="scrollToSlide('slide0')">1</button>
-            <button class="btn" @click="scrollToSlide('slide1')">2</button>
-            <button class="btn" @click="scrollToSlide('slide2')">3</button>
-            <button class="btn" @click="scrollToSlide('slide3')">4</button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { ProductDetail } from '~/types'
+import type { IProductCardProp } from '~/types'
 
-const coverImage = 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429'
-const isOwned = false
-const isFavorite = false
-const detail: ProductDetail = {
-    developers: ['Atlus'],
-    year: 2024,
-    title: 'Persona 3: Reload',
-    platformLogos: [
-        'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-        'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-        'https://static-00.iconduck.com/assets.00/steam-icon-2026x2048-3b7rynay.png'
-    ],
-    generes: ['Action', 'Adventure', 'Horror']
-}
+const productCardProps: IProductCardProp[] = [
+    {
+        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
+        isOwned: false,
+        isFavorite: false,
+        developers: ['Atlus'],
+        year: 2024,
+        title: 'Persona 3: Reload',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+        ],
+        generes: ['Action', 'Adventure', 'Horror']
+    },
+    {
+        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
+        isOwned: true,
+        isFavorite: true,
+        developers: ['Nintendo'],
+        year: 2025,
+        title: 'Mario Kart World',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
+        ],
+        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
+    },
+     {
+        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
+        isOwned: false,
+        isFavorite: false,
+        developers: ['Atlus'],
+        year: 2024,
+        title: 'Persona 3: Reload',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+        ],
+        generes: ['Action', 'Adventure', 'Horror']
+    },
+    {
+        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
+        isOwned: true,
+        isFavorite: true,
+        developers: ['Nintendo'],
+        year: 2025,
+        title: 'Mario Kart World',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
+        ],
+        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
+    },
+     {
+        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
+        isOwned: false,
+        isFavorite: false,
+        developers: ['Atlus'],
+        year: 2024,
+        title: 'Persona 3: Reload',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+        ],
+        generes: ['Action', 'Adventure', 'Horror']
+    },
+    {
+        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
+        isOwned: true,
+        isFavorite: true,
+        developers: ['Nintendo'],
+        year: 2025,
+        title: 'Mario Kart World',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
+        ],
+        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
+    },
+     {
+        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
+        isOwned: false,
+        isFavorite: false,
+        developers: ['Atlus'],
+        year: 2024,
+        title: 'Persona 3: Reload',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+        ],
+        generes: ['Action', 'Adventure', 'Horror']
+    },
+    {
+        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
+        isOwned: true,
+        isFavorite: true,
+        developers: ['Nintendo'],
+        year: 2025,
+        title: 'Mario Kart World',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
+        ],
+        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
+    },
+     {
+        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
+        isOwned: false,
+        isFavorite: false,
+        developers: ['Atlus'],
+        year: 2024,
+        title: 'Persona 3: Reload',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+        ],
+        generes: ['Action', 'Adventure', 'Horror']
+    },
+    {
+        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
+        isOwned: true,
+        isFavorite: true,
+        developers: ['Nintendo'],
+        year: 2025,
+        title: 'Mario Kart World',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
+        ],
+        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
+    },
+     {
+        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
+        isOwned: false,
+        isFavorite: false,
+        developers: ['Atlus'],
+        year: 2024,
+        title: 'Persona 3: Reload',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+        ],
+        generes: ['Action', 'Adventure', 'Horror']
+    },
+    {
+        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
+        isOwned: true,
+        isFavorite: true,
+        developers: ['Nintendo'],
+        year: 2025,
+        title: 'Mario Kart World',
+        platformLogos: [
+            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
+        ],
+        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
+    },
+]
 
-const coverImage2 = 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg'
-const isOwned2 = true
-const isFavorite2 = true
-const detail2: ProductDetail = {
-    developers: ['Nintendo'],
-    year: 2025,
-    title: 'Mario Kart World',
-    platformLogos: [
-        'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-    ],
-    generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-}
-
-// scrolling in carousel
-const scrollToSlide = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return
-    element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-}
-
+// for splash image
+const platformLogos = [
+    'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
+    'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
+]
 
 </script>
