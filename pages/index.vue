@@ -41,7 +41,7 @@
                 <!-- Buttons -->
                 <div class="mt-2 flex flex-wrap gap-2">
                     <!-- Buy -->
-                    <div class="flex bg-rose-700/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1">
+                    <div class="flex bg-rose-700/60 hover:bg-rose-600/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
                         </svg>
@@ -51,7 +51,7 @@
                     </div>
 
                     <!-- Add to collection -->
-                    <div class="flex bg-rose-700/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1">
+                    <div class="flex bg-rose-700/60 hover:bg-rose-600/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                         </svg>
@@ -61,7 +61,7 @@
                     </div>
 
                     <!-- Watch trailer -->
-                    <div class="flex bg-rose-700/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1">
+                    <div class="flex bg-rose-700/60 hover:bg-rose-600/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
                         </svg>
@@ -73,7 +73,7 @@
 
                 <!-- Platform badges-->
                 <div class="mt-10 flex gap-x-[16px]">
-                    <div v-for="logo in platformLogos" :key="logo" class="bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] rounded-[6px] p-1">
+                    <div v-for="logo in platformLogos" :key="logo" class="bg-gray-200/60 border-[1px] hover:bg-gray-100/80 border-gray-100/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
                         <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
                             <img :src="logo" class="h-[17px]">
                         </div>
