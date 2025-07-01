@@ -3,7 +3,7 @@
 
 <template>
     <!-- Outer Product Card -->
-    <div class="bg-gray-50 p-[10px] rounded-[12px] shadow-xl/25" @click="goToProduct">
+    <div class="bg-gray-50/30 border-[1px] border-gray-300/70 p-[10px] rounded-[12px] shadow-sm" @click="goToProduct">
         <div class="relative bg-gray-400 aspect-[3/4] rounded-t-[12px]">
             <!-- Image -->
             <img 
