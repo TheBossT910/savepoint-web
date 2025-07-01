@@ -2,8 +2,6 @@
 <!-- June 19, 2025 -->
 
 <template>
-    <!--     <div class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[10px] rounded-[12px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300" @click="goToProduct">
- -->
     <!-- Outer Product Card -->
     <div :id="`product-card-${props.id}`" class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[10px] rounded-[12px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform" @click="goToProduct">
         <div class="relative bg-gray-400 aspect-[3/4] rounded-t-[12px]">
