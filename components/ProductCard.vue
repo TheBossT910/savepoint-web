@@ -36,37 +36,32 @@
         <!-- Content -->
         <div class="w-full min-h-[120px] flex flex-col gap-y-[12px]">
             <div class="text-gray-400 dm-sans-bold w-full min-h-[16px] mt-[12px] text-[12px]">
-                {{ props.detail.developers.join(', ') }}, {{ props.detail.year }}
+                {{ props.developers.join(', ') }}, {{ props.year }}
             </div>
 
             <div class="text-gray-900 dm-sans-bold w-full min-h-[23px] text-[18px]">
-                {{ props.detail.title }}
+                {{ props.title }}
             </div>
 
             <div class="w-full flex flex-wrap gap-x-2 gap-y-2">
                     <img
-                    v-for="logo in props.detail.platformLogos" :key="logo" 
+                    v-for="logo in props.platformLogos" :key="logo" 
                     :src="logo"
                     class="mx-auto h-[17px]"
                     >
             </div>
 
             <div class="text-gray-400 dm-sans-bold w-full min-h-[16px] text-[12px]">
-                {{ props.detail.generes.join(', ') }}
+                {{ props.generes.join(', ') }}
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { ProductDetail } from '~/types';
+import type { IProductCardProp } from '~/types';
 
-const props = defineProps<{
-    coverImage: string,
-    isOwned: boolean,
-    isFavorite: boolean,
-    detail: ProductDetail
-}>()
+const props = defineProps<IProductCardProp>()
 
 const goToProduct = () => {
     console.log('goToProduct clicked')

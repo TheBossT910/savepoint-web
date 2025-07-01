@@ -6,7 +6,10 @@ export interface Link {
     name: string
 }
 
-export interface ProductDetail {
+export interface IProductCardProp {
+    coverImage: string
+    isOwned: boolean
+    isFavorite: boolean
     developers: string[]
     year: number
     title: string
