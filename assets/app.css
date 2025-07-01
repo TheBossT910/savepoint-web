@@ -88,3 +88,14 @@
       -1px  1px 0 rgba(106, 114, 130, 0.60),
        1px  1px 0 rgba(106, 114, 130, 0.60);
 }
+
+/* Dark-mode styles */
+@media (prefers-color-scheme: dark) {
+  .dark-font-outline {
+    text-shadow:
+        -1px -1px 0 rgba(106, 114, 130, 0.60),
+        1px -1px 0 rgba(106, 114, 130, 0.60),
+        -1px  1px 0 rgba(106, 114, 130, 0.60),
+        1px  1px 0 rgba(106, 114, 130, 0.60);
+  }
+}

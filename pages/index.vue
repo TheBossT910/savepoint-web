@@ -85,7 +85,7 @@
         <!-- Products -->
         <div class="mx-20 my-10">
             <div>
-                <div class="text-gray-900 dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Highest Rated</div>
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Highest Rated</div>
                 <BaseCarousel :product-card-props="productCardProps" />
             </div>
         </div>
