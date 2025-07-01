@@ -100,60 +100,18 @@
             </div>
 
             <div class="flex overflow-hidden space-x-4 p-4">
-                <div id="slide1" class="flex space-x-4">
-                    <div class="carousel-item w-75">
+                <div v-for="(slide, index) in [0, 1, 2, 3]" :id="`slide${ index }`" :key="index" class="flex space-x-4">
+                    <div v-for="(product, productIndex) in [0, 1, 2]" :key="productIndex" class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div>
-                </div>
-
-                <div id="slide2" class="flex space-x-4">
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div>
-                </div>
-
-                <div id="slide3" class="flex space-x-4">
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div>
-                </div>
-
-                <div id="slide4" class="flex space-x-4">
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
-                    </div>
-                    <div class="carousel-item w-75">
-                        <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
                     </div>
                 </div>
             </div>
 
             <!-- Scrolling -->
-            <button class="btn" @click="scrollToSlide('slide1')">1</button>
-            <button class="btn" @click="scrollToSlide('slide2')">2</button>
-            <button class="btn" @click="scrollToSlide('slide3')">3</button>
-            <button class="btn" @click="scrollToSlide('slide4')">4</button>
+            <button class="btn" @click="scrollToSlide('slide0')">1</button>
+            <button class="btn" @click="scrollToSlide('slide1')">2</button>
+            <button class="btn" @click="scrollToSlide('slide2')">3</button>
+            <button class="btn" @click="scrollToSlide('slide3')">4</button>
         </div>
     </div>
 </template>
