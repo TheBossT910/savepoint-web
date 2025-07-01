@@ -5,7 +5,7 @@
             <img 
             src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
             alt=""
-            class="absolute inset-0 h-full object-cover">
+            class="absolute inset-0 h-full w-full object-cover">
 
             <!-- Overlay on splash image -->
             <div class="absolute inset-0 bg-black/30"></div>
@@ -99,7 +99,7 @@
                 <InventoryCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
             </div>
 
-            <div class="flex overflow-auto space-x-4 p-4">
+            <div class="flex overflow-hidden space-x-4 p-4">
                 <div id="slide1" class="flex space-x-4">
                     <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail"/>
@@ -107,9 +107,9 @@
                     <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
                     </div>
-                    <!-- <div class="carousel-item w-75">
+                    <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div> -->
+                    </div>
                 </div>
 
                 <div id="slide2" class="flex space-x-4">
@@ -119,9 +119,9 @@
                     <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
                     </div>
-                    <!-- <div class="carousel-item w-75">
+                    <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div> -->
+                    </div>
                 </div>
 
                 <div id="slide3" class="flex space-x-4">
@@ -131,9 +131,9 @@
                     <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
                     </div>
-                    <!-- <div class="carousel-item w-75">
+                    <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div> -->
+                    </div>
                 </div>
 
                 <div id="slide4" class="flex space-x-4">
@@ -143,16 +143,17 @@
                     <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage2" :is-owned="isOwned2" :is-favorite="isFavorite2" :detail="detail2"/>
                     </div>
-                    <!-- <div class="carousel-item w-75">
+                    <div class="carousel-item w-75">
                         <ProductCard :cover-image="coverImage" :is-owned="isOwned" :is-favorite="isFavorite" :detail="detail" />
-                    </div> -->
+                    </div>
                 </div>
             </div>
 
-            <a href="#slide1" class="btn btn-circle">❮</a>
-            <a href="#slide2" class="btn btn-circle">❯</a>
-            <a href="#slide3" class="btn btn-circle">❯</a>
-            <a href="#slide4" class="btn btn-circle">❯</a>
+            <!-- Scrolling -->
+            <button class="btn" @click="scrollToSlide('slide1')">1</button>
+            <button class="btn" @click="scrollToSlide('slide2')">2</button>
+            <button class="btn" @click="scrollToSlide('slide3')">3</button>
+            <button class="btn" @click="scrollToSlide('slide4')">4</button>
         </div>
     </div>
 </template>
@@ -188,5 +189,13 @@ const detail2: ProductDetail = {
     ],
     generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
 }
+
+// scrolling in carousel
+const scrollToSlide = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return
+    element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+}
+
 
 </script>
