@@ -146,7 +146,7 @@
             <!-- Images -->
             <div class="sticky top-0 overflow-hidden w-full h-[100vh]">
                 <!-- Top -->
-                <div class="flex gap-x-4 mb-4 w-[250%] h-1/3 animate-scroll-start">
+                <div class="flex gap-x-4 mb-4 w-[200%] h-1/3 animate-scroll-start">
                     <div>
                         <img 
                         src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp" 
@@ -173,14 +173,14 @@
                         <img 
                         src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp" 
                         alt=""
-                        class="w-auto h-full  object-cover">
+                        class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
                         src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp" 
                         alt=""
-                        class="w-auto h-full  object-cover">
+                        class="w-auto h-full object-cover">
                     </div>
 
                     <div>
@@ -192,24 +192,24 @@
                 </div>
 
                 <!-- Center -->
-                <div class="flex gap-x-4 mb-4 w-[250%] h-1/3 animate-scroll-end">
+                <div class="flex gap-x-4 mb-4 w-[200%] h-1/3 animate-scroll-end">
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpu.webp" 
                         alt=""
                         class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpw.webp" 
                         alt=""
                         class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpt.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq1.webp" 
                         alt=""
                         class="w-auto h-full  object-cover">
                     </div>
@@ -217,45 +217,45 @@
                     <!-- Repeating imgs for smooth scroll -->
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpu.webp" 
                         alt=""
-                        class="w-auto h-full  object-cover">
+                        class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpw.webp" 
                         alt=""
-                        class="w-auto h-full  object-cover">
+                        class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpt.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq1.webp" 
                         alt=""
                         class="w-auto h-full  object-cover">
                     </div>
                 </div>
 
                 <!-- End -->
-                <div class="flex gap-x-4 w-[250%] h-1/3 animate-scroll-start">
+                <div class="flex gap-x-4 w-[200%] h-1/3 animate-scroll-start">
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq0.webp" 
                         alt=""
                         class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpy.webp" 
                         alt=""
                         class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpt.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpz.webp" 
                         alt=""
                         class="w-auto h-full  object-cover">
                     </div>
@@ -263,21 +263,21 @@
                     <!-- Repeating imgs for smooth scroll -->
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vq0.webp" 
                         alt=""
-                        class="w-auto h-full  object-cover">
+                        class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpy.webp" 
                         alt=""
-                        class="w-auto h-full  object-cover">
+                        class="w-auto h-full object-cover">
                     </div>
 
                     <div>
                         <img 
-                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpt.webp" 
+                        src="https://images.igdb.com/igdb/image/upload/t_720p/sc6vpz.webp" 
                         alt=""
                         class="w-auto h-full  object-cover">
                     </div>
