@@ -68,7 +68,7 @@
                     </div>
 
                     <!-- HLTB -->
-                    <div class="absolute bottom-10 flex flex-wrap gap-2">
+                    <div class="mt-5 mb-10 flex flex-wrap gap-2">
                         <!-- Main -->
                         <div class="flex bg-sky-600 hover:bg-sky-500 border-[1px] border-sky-500 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
