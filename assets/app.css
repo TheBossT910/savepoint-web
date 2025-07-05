@@ -99,3 +99,21 @@
         1px  1px 0 rgba(106, 114, 130, 0.60);
   }
 }
+
+/* Scrolling for images in /games/:id */
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-start {
+  animation: scroll 120s linear infinite;
+}
+
+.animate-scroll-end {
+  animation: scroll 120s linear infinite reverse;
+}
