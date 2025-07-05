@@ -111,9 +111,9 @@
 }
 
 .animate-scroll-start {
-  animation: scroll 120s linear infinite;
+  animation: scroll 60s linear infinite;
 }
 
 .animate-scroll-end {
-  animation: scroll 120s linear infinite reverse;
+  animation: scroll 60s linear infinite reverse;
 }
