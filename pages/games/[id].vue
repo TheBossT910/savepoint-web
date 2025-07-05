@@ -11,9 +11,9 @@
             <!-- Overlay on splash image -->
             <div class="absolute inset-0 bg-black/50"></div>
 
-            <div class="flex">
+            <div class="flex gap-x-10">
                 <!-- Details -->
-                <div class="flex flex-col w-full h-full mr-10">
+                <div class="flex flex-col w-full h-full">
                     <!-- Title -->
                     <div class="dm-sans-bold text-[48px] text-white w-full h-auto z-1">
                         Persona 5: Royal
@@ -109,15 +109,45 @@
                             </div>
                         </div>
                     </div>
-                        <!-- Preview video -->
+                    
+                    <!-- Preview video -->
+                    <div class="flex overflow-x-auto gap-x-4 z-1 mb-10">
                         <iframe 
-                        class="aspect-16/9 w-full lg:w-[50%] rounded-[6px] mb-10 z-1"
+                        class="aspect-16/9 w-full lg:w-[50%] rounded-[6px]"
                         src="https://www.youtube.com/embed/SKpSpvFCZRw" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
                         </iframe>
+
+                        <iframe 
+                        class="aspect-16/9 w-full lg:w-[50%] rounded-[6px]"
+                        src="https://www.youtube.com/embed/o9QjlLdYK5I" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                        </iframe>
+
+                        <iframe 
+                        class="aspect-16/9 w-full lg:w-[50%] rounded-[6px]"
+                        src="https://www.youtube.com/embed/91tGkPg1txE" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                        </iframe>
+
+                        <iframe 
+                        class="aspect-16/9 w-full lg:w-[50%] rounded-[6px]"
+                        src="https://www.youtube.com/embed/IR_7H_zzU7Y" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
 
                 <!-- Card (on >=md) -->
