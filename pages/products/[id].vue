@@ -338,7 +338,7 @@
         </div>
 
         <div class="relative px-10">
-            <div class="dm-sans-bold text-[48px] text-black w-full h-auto">
+            <div class="dm-sans-bold text-[48px] text-base-900 dark-font-outline w-full h-auto">
                 Retailers
             </div>
 
@@ -346,7 +346,7 @@
                 <div class="w-1/2">
                     <div class="flex flex-row">
                         <!-- Retailer card -->
-                        <div class="w-[90%] bg-gray-300 border-gray-300 border-[10px] rounded-[12px]">
+                        <div class="w-[90%] bg-gray-300 border-gray-300 border-[10px] rounded-[12px] shadow-md">
                             <div class="flex bg-gray-100 rounded-[12px]">
                                 <div class="w-[50%] px-2">
                                     <!-- Title -->
@@ -374,9 +374,9 @@
                                     </div>
                                 </div>
 
-                                <div class="w-[15%] p-2 my-auto">
+                                <div class="w-[15%] my-auto">
                                     <div class="bg-green-500/60 border-green-400 border-[1px] p-2 rounded-[12px]">
-                                        <div class="dm-sans-bold text-[16px] text-white w-full h-auto">
+                                        <div class="dm-sans-bold text-[16px] font-outline text-white w-full h-auto">
                                             $9.99 - $49.99
                                         </div>
                                     </div>
@@ -385,19 +385,19 @@
                                 <div class="w-[35%] p-2 gap-y-2">
                                     <!-- Condiitons -->
                                     <div class="bg-blue-600/60 border-blue-500 border-[1px] px-2 mb-2 rounded-[12px]">
-                                        <div class="dm-sans-bold text-[16px] text-white w-full h-auto">
+                                        <div class="dm-sans-bold text-[16px] font-outline text-white w-full h-auto">
                                             New
                                         </div>
                                     </div>
 
                                     <div class="bg-green-500/60 border-green-400 border-[1px] px-2 mb-2 rounded-[12px]">
-                                        <div class="dm-sans-bold text-[16px] text-white w-full h-auto">
+                                        <div class="dm-sans-bold text-[16px] font-outline text-white w-full h-auto">
                                             Complete
                                         </div>
                                     </div>
 
                                     <div class="bg-yellow-500/60 border-yellow-400 border-[1px] px-2 rounded-[12px]">
-                                        <div class="dm-sans-bold text-[16px] text-white w-full h-auto">
+                                        <div class="dm-sans-bold text-[16px] font-outline text-white w-full h-auto">
                                             Used
                                         </div>
                                     </div>
@@ -410,8 +410,80 @@
             <div class="w-1/2">
                 <div class="flex flex-row justify-center">
                     <!-- Map -->
-                    <div class="bg-blue-500 w-full h-[690px]">
-                        Map
+                    <div class="bg-gray-300 border-gray-300 border-[10px] rounded-[12px] shadow-md w-full h-[690px]">
+                        <div class="bg-gray-100 h-full rounded-[12px]">
+                            <div class="h-3/5 p-2 rounded-t-[12px]">
+                                <img src="public/images/map.png" class="object-cover h-full w-full rounded-[12px]">
+                            </div>
+
+                            <div class="bg-red-500 flex h-2/5">
+                                <div class="bg-green-300 p-[10px] w-1/2">
+                                    <div class="bg-blue-300 h-1/3">
+                                        <div class="dm-sans-bold my-auto text-[32px] text-white font-outline">
+                                            Address
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-red-300 h-1/3">
+                                        <div class="dm-sans-bold my-auto text-[32px] text-white font-outline">
+                                            Hours
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-yellow-300 h-1/3">
+                                        <div class="dm-sans-bold my-auto text-[32px] text-white font-outline">
+                                            Phone #
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-blue-300 p-[10px] w-1/2 my-auto">
+                                    <div class="flex justify-between h-1/4">
+                                        <div class="flex bg-blue-600/60 border-blue-500/70 border-[1px] backdrop-blur-[5px] w-full px-2 mb-2 rounded-[12px]">
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline">
+                                                Excellent
+                                            </div>
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline ml-auto">
+                                                ###
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-between h-1/4">
+                                        <div class="flex bg-green-500/60 border-green-400/70 border-[1px] backdrop-blur-[5px] w-full px-2 mb-2 rounded-[12px]">
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline">
+                                                Great
+                                            </div>
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline ml-auto">
+                                                ###
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-between h-1/4">
+                                        <div class="flex bg-yellow-500/60 border-yellow-400/70 border-[1px] backdrop-blur-[5px] w-full px-2 mb-2 rounded-[12px]">
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline">
+                                                Good
+                                            </div>
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline ml-auto">
+                                                ###
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex justify-between h-1/4">
+                                        <div class="flex bg-red-600/60 border-red-500/70 border-[1px] backdrop-blur-[5px] w-full px-2 mb-2 rounded-[12px]">
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline">
+                                                Acceptable
+                                            </div>
+                                            <div class="dm-sans-bold my-auto text-[16px] md:text-[32px] text-white font-outline ml-auto">
+                                                ###
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
