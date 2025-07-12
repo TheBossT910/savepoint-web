@@ -2,8 +2,9 @@
 <!-- Jun 19, 2025 -->
 
 <template>
-    <div class="navbar bg-base-300/0 backdrop-blur-[3px] shadow-sm sticky top-0 z-50">
-        <div class="navbar-start">
+    <div class="flex h-[60px] bg-base-300/0 backdrop-blur-[3px] shadow-sm sticky top-0 z-50">
+        <!-- SavePoint logo -->
+        <div class="my-auto">
             <div class="dropdown">
                 <button class="btn btn-sm btn-ghost mr-1 lg:hidden" tabindex="0">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
@@ -14,11 +15,13 @@
                     </li>
                 </ul>
             </div>
+
             <a href="#" class="dm-sans-bold text-[32px] text-white font-outline lg:ml-3">
                 SavePoint
             </a>
         </div>
-        <div class="navbar-center">
+
+        <div class="my-auto ml-auto">
             <label class="hidden lg:flex input w-lg">
                 <input type="search" placeholder="Search" class="grow"/>
                 <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -35,7 +38,9 @@
                 </svg>
             </label>
         </div>
-        <div class="navbar-end">
+
+
+        <div class="my-auto ml-auto">
             <!-- Extra small screen -->
             <button class="mr-2 md:hidden">
                 <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
