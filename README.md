@@ -101,15 +101,21 @@ SavePoint bridges that gap.
 ---
 
 ## Screenshots
+> Concept Page (Figma)
+<img width="500" alt="Concept Page" src="https://github.com/user-attachments/assets/8a565b72-56ad-4eae-aed3-ad791af83f0b" />
 
-> *Coming soon*
+> Components (Figma)
+<img width="500" alt="Components" src="https://github.com/user-attachments/assets/1335598b-a2e0-4833-836d-0f3781ead108" />
 
-<!-- Format for screenshots: -->
-<!-- ![Game Catalog](./screenshots/catalog.png) -->
-<!-- ![Barcode Scanner](./screenshots/scanner.png) -->
-<!-- ![Store Inventory View](./screenshots/store-inventory.png) -->
+> Home (Site)
+<img width="500" alt="SavePoint Web Home" src="https://github.com/user-attachments/assets/2225f43a-466e-4879-9877-07060477afdc" />
 
----
+<img width="500" alt="SavePoint Web Home (2)" src="https://github.com/user-attachments/assets/b6c478d7-21fe-49f7-91ef-b92fdde16fea" />
+
+> Details (Site)
+<img width="500" alt="Details Page" src="https://github.com/user-attachments/assets/0a1950fe-8ee5-4e8d-b530-7a9214c713ab" />
+
+<img width="500" alt="Desc Area" src="https://github.com/user-attachments/assets/18e0fc2b-ab4a-4b64-88dd-9cc606c6554d" />
 
 ## Live Demo
 
