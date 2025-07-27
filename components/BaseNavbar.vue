@@ -124,5 +124,5 @@ const props = defineProps<{
     links: Link[]
 }>()
 
-const searchPopupOpen = ref(true)
+const searchPopupOpen = ref(false)
 </script>
