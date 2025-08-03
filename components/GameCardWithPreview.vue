@@ -5,15 +5,15 @@
     <!-- Outer Card -->
     <div :id="`product-card-${props.id}`" class="flex flex-row gap-x-3 bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform" @click="goToProduct">
         <!-- Game cover section -->
-        <div class="relative rounded-2xl transition-all duration-300 w-[30%]">
+        <div class="relative rounded-2xl transition-all duration-300 w-[0%] md:w-[30%] hidden md:block">
             <!-- Image -->
             <img 
             :src="props.coverImage"
-            class="w-full aspect-[2/3] object-cover rounded-2xl"
+            class="w-full h-full object-cover rounded-2xl"
             >
 
             <!-- Buy button -->
-            <div class="flex absolute left-0 right-0 bottom-2 bg-[#9B5BE9]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[105px] w-[95%] mx-auto rounded-2xl">
+           <div class="flex absolute left-0 right-0 bottom-2 bg-[#9B5BE9]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[105px] w-[95%] mx-auto rounded-2xl">
                 <div class="m-auto">
                     $ Buy
                 </div>
@@ -35,9 +35,9 @@
         </div>
 
         <!-- Video section -->
-        <div class="relative rounded-2xl transition-all duration-300 w-[70%]">
+        <div class="relative rounded-2xl transition-all duration-300 w-full md:w-[70%]">
             <!-- Video -->
-            <div class="h-[75%]">
+            <div class="aspect-video">
                 <iframe 
                     class="w-full h-full object-cover rounded-2xl"
                     src="https://www.youtube.com/embed/SKpSpvFCZRw" 
@@ -48,25 +48,46 @@
                 </iframe>
             </div>
 
+            <!-- Buy button -->
+            <div class="flex bg-[#9B5BE9]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[55px] w-full mx-auto rounded-2xl mt-2 md:hidden">
+                <div class="m-auto">
+                    $ Buy
+                </div>
+            </div>
+
             <!-- Details -->
-            <div class="h-[25%] pt-2 px-3">
-                <div class="text-gray-400 dm-sans-bold w-full text-xl">
+            <div class="h-auto pt-2 px-3">
+                <div class="flex text-gray-400 dm-sans-bold w-full text-[12px] md:text-[16px] lg:text-[20px]">
                     {{ props.developers.join(', ') }}, {{ props.year }}
+
+                    <!-- Owned badge -->
+                    <div class="flex ml-auto bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] w-[58px] h-[22px] rounded-2xl font-outline dm-sans-bold text-white text-[12px] md:hidden">
+                        <div class="m-auto">
+                            Owned
+                        </div>
+                    </div>
+
+                    <!-- Favorite badge -->
+                    <div class="flex ml-2 items-center justify-center text-base-900 dark-font-outline bg-[#EF4444]/70 border-[1px] border-[#F87171]/70 backdrop-blur-[5px] w-[22px] h-[22px] rounded-full md:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                        </svg>
+                    </div>
                 </div>
 
-                <div class="text-base-900 dark-font-outline dm-sans-bold w-full text-4xl">
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full text-[18px] md:text-[22px] lg:text-[26px]">
                     {{ props.title }}
                 </div>
 
-                <div class="w-full flex flex-wrap gap-x-2 gap-y-2 mt-2">
+                <div class="w-full flex flex-wrap gap-x-2 gap-y-2 p-2">
                     <img
                     v-for="logo in props.platformLogos" :key="logo" 
                     :src="logo"
-                    class="mx-auto h-[17px] dark:invert"
+                    class="mx-auto h-[10px] sm:h-[17px] dark:invert"
                     >
                 </div>
 
-                <div class="absolute bottom-0 text-gray-400 dm-sans-bold w-full text-xl pb-2">
+                <div class="text-gray-400 dm-sans-bold w-full pb-2 text-[12px] md:text-[16px] lg:text-[20px]">
                     {{ props.generes.join(', ') }}
                 </div>
             </div>
