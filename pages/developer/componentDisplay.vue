@@ -3,10 +3,9 @@
 
 <template>
     <div>
-        <!-- Products -->
         <div class="px-20 pb-10 pt-30">
-            <div class="w-[30%]">
-                <GameCard :="productCardProps[0]"/>
+            <div>
+                <GameCardWithPreview :="productCardProps[0]"/>
             </div>
         </div>
     </div>
