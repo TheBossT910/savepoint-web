@@ -19,7 +19,7 @@
             </div>
 
             <!-- Platform badges -->
-            <div class="flex absolute left-0 right-0 bottom-18 bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] h-[25px] w-[95%] mx-auto rounded-2xl">
+            <div class="flex absolute left-0 right-0 bottom-18 bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] min-h-[25px] w-[95%] mx-auto rounded-2xl">
                 <div class="w-full flex flex-wrap gap-x-2 gap-y-2 m-auto">
                     <img
                     v-for="logo in props.platformLogos" :key="logo" 
