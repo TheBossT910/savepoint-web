@@ -26,7 +26,7 @@
                     :src="logo"
                     class="mx-auto max-h-[13px] invert"
                     >
-            </div>
+                </div>
             </div>
 
             <!-- Owned badge -->
