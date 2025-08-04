@@ -4,8 +4,23 @@
 <template>
     <div>
         <div class="px-20 pb-10 pt-30">
-            <div>
-                <GameCardWithPreview :="productCardProps[0]"/>
+            <div class="flex flex-col gap-y-5">
+                <div>
+                    Game Card
+                    <GameCard :="productCardProps[0]" class="w-[30%]"/>
+                </div>
+                <div>
+                    Game Card with Preview
+                    <GameCardWithPreview :="productCardProps[0]"/>
+                </div>
+                <div>
+                    Game Poster
+                    <GamePoster :="productCardProps[0]" class="w-[30%]"/>
+                </div>
+                <div>
+                    Game Stack
+                    <GameStack :game-poster="productCardProps" class="w-[30%]"/>
+                </div>
             </div>
         </div>
     </div>
