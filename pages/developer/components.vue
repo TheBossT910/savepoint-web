@@ -7,7 +7,7 @@
             <div class="flex flex-col gap-y-5">
                 <div>
                     Game Card
-                    <GameCard :="productCardProps[0]" class="w-[30%]"/>
+                    <GameCard :="productCardProps[0]" class=""/>
                 </div>
                 <div>
                     Game Card with Preview
@@ -15,15 +15,15 @@
                 </div>
                 <div>
                     Game Poster
-                    <GamePoster :="productCardProps[0]" class="w-[30%]"/>
+                    <GamePoster :="productCardProps[0]" class=""/>
                 </div>
-                <div>
+                <div class="mt-10">
                     Game Stack
-                    <GameStack :game-poster="productCardProps" class="w-[30%]"/>
+                    <GameStack :game-poster="productCardProps" class=""/>
                 </div>
-                <div class="mt-30">
+                <div class="mt-70">
                     List
-                    <List :="productCardProps[0]" class="w-[30%]"/>
+                    <List :="productCardProps[0]" class=""/>
                 </div>
             </div>
         </div>
