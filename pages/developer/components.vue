@@ -25,6 +25,9 @@
                     List
                     <List :="productCardProps[0]" class=""/>
                 </div>
+                <div class="mt-10">
+                    <RetailerCard />
+                </div>
             </div>
         </div>
     </div>
