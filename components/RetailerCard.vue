@@ -45,13 +45,13 @@
                         <!-- Conditons -->
                         <div class="bg-[#9B5BE9]/70 border-[#7B28E0] border-[1px] px-2 rounded-2xl">
                             <div class="dm-sans-bold text-[24px] text-white font-outline w-full h-auto">
-                                <div class="flex">
+                                <div class="flex flex-wrap">
                                     New <span class="ml-auto">###</span>
                                 </div>
-                                <div class="flex">
+                                <div class="flex flex-wrap">
                                     Complete <span class="ml-auto">###</span>
                                 </div>
-                                <div class="flex">
+                                <div class="flex flex-wrap">
                                     Used <span class="ml-auto">###</span>
                                 </div>
                             </div>
