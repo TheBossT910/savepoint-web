@@ -3,16 +3,18 @@
 
 <template>
     <!-- Stack of posters -->
-    <div 
-      v-for="(game, index) in props.gamePoster.slice(0, gamePoster.length >= 5 ? 5: gamePoster.length)" 
-      :key="game.id"
-      class="absolute transition-transform duration-300 w-[80%]"
-      :style="{ 
-        transform: `rotate(${getAngle(index)}deg) ${getOffset(index)}`,
-        zIndex: `${index}`
-      }"
-    >
-      <GamePoster v-bind="game" />
+    <div class="relative">
+      <div 
+        v-for="(game, index) in props.gamePoster.slice(0, gamePoster.length >= 5 ? 5: gamePoster.length)" 
+        :key="game.id"
+        class="absolute transition-transform duration-300 w-[80%]"
+        :style="{ 
+          transform: `rotate(${getAngle(index)}deg) ${getOffset(index)}`,
+          zIndex: `${index}`
+        }"
+      >
+        <GamePoster v-bind="game" />
+      </div>
     </div>
 </template>
 

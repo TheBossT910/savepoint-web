@@ -19,7 +19,7 @@
                 </div>
                 <div class="mt-10">
                     Game Stack
-                    <GameStack :game-poster="productCardProps" class=""/>
+                    <GameStack :game-poster="productCardProps" class="w-[50%]"/>
                 </div>
                 <div class="mt-70">
                     List
