@@ -28,6 +28,9 @@
                 <div class="mt-10">
                     <RetailerCard />
                 </div>
+                <div class="mt-10">
+                    <RetailerMap />
+                </div>
             </div>
         </div>
     </div>
