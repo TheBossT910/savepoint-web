@@ -382,7 +382,7 @@
                             </div>
 
                             <div class="sm:w-[35%] mt-4 sm:mt-0 sm:mt-0 my-auto p-2 gap-y-2">
-                                <!-- Condiitons -->
+                                <!-- Conditons -->
                                 <div class="bg-blue-600/60 border-blue-500 border-[1px] px-2 mb-2 rounded-[12px]">
                                     <div class="dm-sans-bold text-[24px] text-base-900 dark-font-outline w-full h-auto">
                                         New
