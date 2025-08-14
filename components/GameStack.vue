@@ -2,12 +2,11 @@
 <!-- Aug 3, 2025 -->
 
 <template>
-  <div class="relative w-full h-[400px]">
     <!-- Stack of posters -->
     <div 
       v-for="(game, index) in props.gamePoster.slice(0, gamePoster.length >= 5 ? 5: gamePoster.length)" 
       :key="game.id"
-      class="absolute w-[30%] transition-transform duration-300"
+      class="absolute transition-transform duration-300 w-[80%]"
       :style="{ 
         transform: `rotate(${getAngle(index)}deg) ${getOffset(index)}`,
         zIndex: `${index}`
@@ -15,7 +14,6 @@
     >
       <GamePoster v-bind="game" />
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
