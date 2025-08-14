@@ -38,7 +38,7 @@
                 <!-- Bottom -->
                 <div class="flex h-[80%]">
                     <div class="w-[100%]">
-                        <div class="flex h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[5px] shadow-sm dark:shadow-gray-400/60 rounded-2xl transition-all duration-300 ease-out will-change-transform">
+                        <div class="flex h-full p-[5px]">
                             <!-- Platform -->
                             <div class="w-[50%] h-full">
                                 <div class="grid grid-cols-2 gap-1 h-full">
@@ -111,7 +111,7 @@
                 <!-- Bottom -->
                 <div class="flex h-[70%]">
                     <div class="w-[100%]">
-                        <div class="flex h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[5px] shadow-sm dark:shadow-gray-400/60 rounded-2xl transition-all duration-300 ease-out will-change-transform">
+                        <div class="flex h-full p-[5px]">
                             <!-- Platform -->
                             <div class="w-[50%] h-full">
                                 <div class="grid grid-cols-2 gap-1 h-full">
@@ -188,7 +188,7 @@
                     </div>
 
                     <div class="w-[65%]">
-                        <div class="flex h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[5px] shadow-sm dark:shadow-gray-400/60 rounded-2xl transition-all duration-300 ease-out will-change-transform">
+                        <div class="flex h-full p-[5px]">
                             <!-- Platform -->
                             <div class="w-[50%] h-full">
                                 <div class="grid grid-cols-2 gap-1 h-full">
