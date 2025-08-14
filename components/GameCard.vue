@@ -12,14 +12,14 @@
             >
 
             <!-- Buy button -->
-            <div class="flex absolute left-0 right-0 bottom-2 bg-[#9B5BE9]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[55px] w-[95%] mx-auto rounded-2xl">
+            <div class="flex absolute left-2 right-2 bottom-2 bg-[#9B5BE9]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[55px] mx-auto rounded-2xl">
                 <div class="m-auto">
                     $ Buy
                 </div>
             </div>
 
             <!-- Platform badges -->
-            <div class="flex absolute left-0 right-0 bottom-18 bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] min-h-[25px] w-[95%] mx-auto rounded-2xl">
+            <div class="flex absolute left-2 right-2 bottom-18 bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] min-h-[25px] mx-auto rounded-2xl">
                 <div class="w-full flex flex-wrap gap-x-2 gap-y-2 m-auto">
                     <img
                     v-for="logo in props.platformLogos" :key="logo" 
