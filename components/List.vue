@@ -6,7 +6,7 @@
     <div :id="`game-card-${props.id}`" class="w-full flex lg:min-h-[170px]" @click="goToProduct">
         <!-- Content (sm) -->
         <div class="md:hidden w-full">
-            <div class="bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform">
+            <div class="bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px]  shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out will-change-transform">
                 <!-- Top -->
                 <div>
                     <div class="flex rounded-2xl">
@@ -63,7 +63,7 @@
         </div>
 
         <!-- Content (md) -->
-        <div class="hidden md:flex lg:hidden  w-full h-full min-h-[280px] bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform">
+        <div class="hidden md:flex lg:hidden  w-full h-full min-h-[280px] bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out will-change-transform">
             <!-- Image -->
             <div class="w-[30%]">
                 <div class="flex h-full pr-1 rounded-2xl transition-all duration-300">
@@ -136,7 +136,7 @@
         </div>
 
         <!-- Content (lg) -->
-        <div class="hidden lg:flex w-full h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform">
+        <div class="hidden lg:flex w-full h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out will-change-transform">
             <!-- Image -->
             <div class="w-[30%]">
                 <div class="flex h-full pr-1 rounded-2xl transition-all duration-300">
