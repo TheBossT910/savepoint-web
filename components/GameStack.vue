@@ -18,7 +18,7 @@
           zIndex: `${index}`
         }"
       >
-        <GamePoster v-bind="game" />
+        <GamePoster :id="game.id" :image="game.coverImage" />
       </div>
     </div>
 </template>

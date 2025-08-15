@@ -15,7 +15,7 @@
                 </div>
                 <div>
                     Game Poster
-                    <GamePoster :="productCardProps[0]" class=""/>
+                    <GamePoster :id="1" :image="productCardProps[0].coverImage" class=""/>
                 </div>
                 <div class="mt-10">
                     Game Stack
