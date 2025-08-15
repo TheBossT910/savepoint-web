@@ -22,8 +22,6 @@
                     </div>
                 </div>
 
-            
-
                 <!-- Reviews -->
                 <div class="flex mt-2 ml-1 w-100 h-[20px]">
                     <!-- Metacritic -->
