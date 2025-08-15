@@ -5,7 +5,7 @@
     </div>
    
     <!-- This displays our current pages -->
-    <div>
+    <div class="bg-dot">
       <NuxtPage />
     </div>
   </div>
