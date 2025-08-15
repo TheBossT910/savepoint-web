@@ -13,7 +13,7 @@
             <div class="relative flex rounded overflow-hidden space-x-4 p-4">
                 <div v-for="(groupNumber, index) in groupSize" :id="`slide${ index }`" :key="index" class="flex space-x-4">  
                     <div v-for="(product, productIndex) in props.productCardProps.slice(index * displaySize, displaySize + (index * displaySize))" :key="productIndex" class="carousel-item w-40 sm:w-65 md:w-75">
-                        <ProductCard :="product" />
+                        <GameCard :="product" />
                     </div>
                 </div>
             </div>
