@@ -117,3 +117,31 @@
 .animate-scroll-end {
   animation: scroll 60s linear infinite reverse;
 }
+
+/* Container with gradient border */
+.gradient-border-frame-xl {
+  position: relative;
+  border-radius: 16px; /* matches inner rounding */
+  display: inline-block; /* ensures proper sizing */
+}
+
+/* Inner content wrapper */
+.gradient-border-frame-xl > .inner-xl {
+  position: relative;
+  border-radius: 16px; /* rounded-xl in Tailwind */
+}
+
+/* Gradient border pseudo-element */
+.gradient-border-frame-xl::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px; /* border thickness */
+  background: linear-gradient(to right, rgba(38, 193, 224, 0.7), rgba(123, 40, 224, 0.7));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+  pointer-events: none; /* allows clicks on content */
+  z-index: 2; /* above inner background but below content if needed */
+}

@@ -12,36 +12,47 @@
 
             <div class="flex flex-col w-full h-full">
                 <!-- Title -->
-                <div class="dm-sans-bold text-[48px] text-white w-full h-auto z-1">
+                <div class="flex dm-sans-bold text-[48px] text-white w-full h-auto z-1">
                     Persona 5: Royal
+                    <!-- Favorite badge -->
+                    <div class="ml-2 flex items-center justify-center my-auto text-white dark-font-outline bg-[#EF4444]/70 border-[1px] border-[#F87171]/70 backdrop-blur-[5px] w-[22px] h-[22px] rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                        </svg>
+                    </div>
                 </div>
 
+            
+
                 <!-- Reviews -->
-                <div class="flex mt-2 w-100 h-[20px]">
+                <div class="flex mt-2 ml-1 w-100 h-[20px]">
                     <!-- Metacritic -->
-                    <div class="flex px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] rounded-[12px]">
+                    <div class="flex backdrop-blur-[5px] rounded-2xl">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Metacritic_M.png" class="ml-1 h-[17px] my-auto">
                         <div class="dm-sans-bold text-[12px] text-white ml-1">100/100</div>
                     </div>
 
                     <!-- IGN -->
-                    <div class="flex ml-5 px-2 bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] rounded-[12px]">
+                    <div class="flex ml-5 backdrop-blur-[5px] rounded-2xl">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/IGN_logo.svg/2560px-IGN_logo.svg.png" class="h-[17px] my-auto">
                         <div class="dm-sans-bold text-[12px] text-white ml-1">10/10</div>
                     </div>
                 </div>
 
                 <!-- Description -->
-                <div class="mt-5 w-full md:w-[50%] xl:w-[35%] h-auto bg-gray-200/60 border-[1px] border-gray-100/70 backdrop-blur-[5px] rounded-[12px]">
-                    <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
-                        Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!
+                <div class="gradient-border-frame-xl mt-5 w-full md:w-[50%] xl:w-[35%]">
+                    <!-- bg-gray-200/60 -->
+                    <div class="inner-xl bg-gradient-to-b from-[#26C1E0]/70 to-[#7B28E0]/70 backdrop-blur-[5px]">
+                        <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
+                            Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!
+                        </div>
                     </div>
                 </div>
 
                 <!-- Buttons -->
                 <div class="mt-2 flex flex-wrap gap-2">
                     <!-- Buy -->
-                    <div class="flex bg-rose-700/60 hover:bg-rose-600/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
+                    <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
                         </svg>
@@ -51,7 +62,7 @@
                     </div>
 
                     <!-- Add to collection -->
-                    <div class="flex bg-rose-700/60 hover:bg-rose-600/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
+                    <div class="flex bg-gradient-to-r from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                         </svg>
@@ -61,7 +72,7 @@
                     </div>
 
                     <!-- Watch trailer -->
-                    <div class="flex bg-rose-700/60 hover:bg-rose-600/60 border-[1px] border-rose-600/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
+                    <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
                         </svg>
@@ -73,20 +84,95 @@
 
                 <!-- Platform badges-->
                 <div class="mt-10 flex gap-x-[16px]">
-                    <div v-for="logo in platformLogos" :key="logo" class="bg-gray-200/60 border-[1px] hover:bg-gray-100/80 border-gray-100/70 backdrop-blur-[5px] rounded-[6px] p-1 transition-all duration-300">
+                    <div v-for="logo in platformLogos" :key="logo" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
                         <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                            <img :src="logo" class="h-[17px]">
+                            <img :src="logo" class="h-[17px] invert">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Products -->
+        <!-- Content -->
         <div class="mx-20 my-10">
-            <div>
-                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Highest Rated</div>
+            <!-- Filter Buttons -->
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-4">
+                <div class="flex bg-[#9B5BE9]/70 hover:bg-[#9B5BE9] border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
+                        Top Rated
+                    </div>
+                </div>
+                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
+                        New Releases
+                    </div>
+                </div>
+                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
+                        Classics
+                    </div>
+                </div>
+                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
+                        Trending Now
+                    </div>
+                </div>
+                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
+                        Indie Picks
+                    </div>
+                </div>
+                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div class="mx-auto dm-sans-bold text-[32px] text-white font-outline">
+                        Multiplayer
+                    </div>
+                </div>
+            </div>
+
+            <!-- See more button -->
+            <div class="flex mt-2">
+                <div class="inline-flex ml-auto relative py-1 px-4 bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl transition-all duration-300">
+                    <span class="mx-auto dm-sans-bold text-[14px] text-white">
+                        See More >
+                    </span>
+                </div>
+            </div>
+
+            <BaseCarousel :product-card-props="productCardProps" />
+
+            <div class="md:flex px-4">
+                <div class="md:w-[70%] flex">
+                    <GameCardWithPreview :="productCardProps[0]" class="m-auto w-full"/>
+                </div>
+                <div class="md:w-[30%] flex">
+                    <GameStack :game-poster="productCardProps" class="m-auto"/>
+                </div>
+            </div>
+
+            <div class="mt-10">
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">All-Time Favourites</div>
                 <BaseCarousel :product-card-props="productCardProps" />
+            </div>
+
+            <div class="mt-10">
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Featured</div>
+                <BaseCarousel :product-card-props="productCardProps" />
+            </div>
+
+            <div class="mt-10">
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Staff-Favourite Stacks</div>
+                <div class="sm:flex gap-x-10 px-4">
+                    <GameStack :game-poster="productCardProps" class="m-auto"/>
+                    <GameStack :game-poster="productCardProps" class="m-auto"/>
+                    <GameStack :game-poster="productCardProps" class="m-auto"/>
+                </div>
+            </div>
+
+            <div class="flex flex-col mt-10">
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Recommended</div>
+                <div class="px-4">
+                    <GameCardWithPreview :="productCardProps[0]" class="m-auto w-full"/>
+                </div>
             </div>
         </div>
     </div>
