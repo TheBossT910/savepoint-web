@@ -4,7 +4,7 @@
 <template>
     <!-- Outer Card -->
     <div :id="`game-card-${props.id}`" class="w-full flex lg:min-h-[170px]">
-        <div class="flex w-full h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out will-change-transform">
+        <div class="flex w-full h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-2xl p-[5px] shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out will-change-transform">
             <!-- Image -->
             <div class="w-1/3 hidden lg:block">
                 <img :src="props.horizontalImage" class="w-full h-full object-cover rounded-2xl">
