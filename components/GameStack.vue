@@ -3,7 +3,12 @@
 
 <template>
     <!-- Stack of posters -->
-    <div class="relative">
+    <div class="relative flex justify-center items-center">
+      <!-- Sets the height for the view -->
+      <div class="invisible w-[100%]">
+        <GamePoster v-bind="props.gamePoster[0]" />
+      </div>
+
       <div 
         v-for="(game, index) in props.gamePoster.slice(0, gamePoster.length >= 5 ? 5: gamePoster.length)" 
         :key="game.id"

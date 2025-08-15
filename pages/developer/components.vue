@@ -21,7 +21,7 @@
                     Game Stack
                     <GameStack :game-poster="productCardProps" class="w-[50%]"/>
                 </div>
-                <div class="mt-70">
+                <div class="">
                     List
                     <List :="productCardProps[0]" class=""/>
                 </div>
