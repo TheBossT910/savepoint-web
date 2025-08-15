@@ -3,7 +3,7 @@
 
 <template>
     <!-- Outer Card -->
-    <div :id="`game-card-${props.id}`" class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform" @click="goToProduct">
+    <div :id="`game-card-${props.id}`" class="flex flex-col bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] rounded-2xl p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform" @click="goToProduct">
         <div class="relative aspect-[2/3] rounded-2xl transition-all duration-300">
             <!-- Image -->
             <img 
@@ -46,17 +46,18 @@
 
         <!-- Content -->
         <div class="flex flex-col w-full px-1 py-1">
-            <div class="text-base-900 dark-font-outline dm-sans-bold w-full min-h-[23px] text-[18px]">
+            <div class="text-base-900 dark-font-outline dm-sans-bold w-full text-[18px]">
                 {{ props.title }}
             </div>
 
-            <div class="text-gray-400 dm-sans-bold w-full min-h-[16px] text-[12px]">
+            <div class="text-gray-400 dm-sans-bold w-full text-[12px]">
                 {{ props.developers.join(', ') }}, {{ props.year }}
             </div>
+        </div>
 
-            <div class="text-gray-400 dm-sans-bold w-full min-h-[16px] text-[12px] mt-1">
-                {{ props.generes.join(', ') }}
-            </div>
+        <!-- Genres -->
+        <div class="text-gray-400 dm-sans-bold w-full text-[12px] px-1 py-1 mt-auto">
+            {{ props.generes.join(', ') }}
         </div>
     </div>
 </template>
