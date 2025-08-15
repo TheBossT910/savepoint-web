@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-dot">
         <div class="relative py-30 px-10">
             <!-- Splash image -->
             <img 

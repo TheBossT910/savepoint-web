@@ -118,6 +118,7 @@
   animation: scroll 60s linear infinite reverse;
 }
 
+/* Container gradient */
 /* Container with gradient border */
 .gradient-border-frame-xl {
   position: relative;
@@ -144,4 +145,53 @@
           mask-composite: exclude;
   pointer-events: none; /* allows clicks on content */
   z-index: 2; /* above inner background but below content if needed */
+}
+
+/* Background dots */
+.bg-dot {
+  position: relative;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .bg-dot {
+    --dot-color-1: rgba(38, 193, 224, 0.2);
+    --dot-color-2: rgba(123, 40, 224, 0.6);
+    --dot-glow-1: rgba(16, 164, 218, 0);
+    --dot-glow-2: rgba(155, 91, 233, 0);
+    --dot-bg: #0d1117;
+  }
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .bg-dot {
+    --dot-color-1: rgba(38, 193, 224, 0.4);
+    --dot-color-2: rgba(123, 40, 224, 0.1);
+    --dot-glow-1: rgba(16, 164, 218, 0);
+    --dot-glow-2: rgba(155, 91, 233, 0);
+    --dot-bg: #ffffff;
+  }
+}
+
+
+.bg-dot::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* main dots + glow underneath */
+  background:
+    radial-gradient(circle, var(--dot-glow-1) 3px, transparent 3px),
+    radial-gradient(circle, var(--dot-glow-2) 3px, transparent 3px),
+    radial-gradient(circle, var(--dot-color-1) 1px, transparent 1px),
+    radial-gradient(circle, var(--dot-color-2) 1px, transparent 1px);
+
+  /* offset second layers to alternate pattern */
+  background-position: 0 0, 12px 12px, 0 0, 12px 12px;
+  background-size: 24px 24px;
+
+  background-color: var(--dot-bg);
 }
