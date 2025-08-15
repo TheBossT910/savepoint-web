@@ -6,8 +6,8 @@
         <div class="w-full">
             <div class="flex flex-col">
                 <!-- Retailer card -->
-                <div class="sm:flex bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-3xl p-1 shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out">
-                    <div class="sm:w-[50%] px-3 py-1 flex flex-wrap items-center">
+                <div class="lg:flex bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-3xl p-1 shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out">
+                    <div class="lg:w-[50%] px-3 py-1 flex flex-wrap items-center">
                         <!-- Title -->
                         <div class="dm-sans-bold text-[48px] text-base-900 dark-font-outline w-full h-auto">
                             EB Games
@@ -41,7 +41,7 @@
                         </div>
                     </div>
 
-                    <div class="sm:w-[50%] my-auto p-1">
+                    <div class="lg:w-[50%] my-auto p-1">
                         <!-- Conditons -->
                         <div class="bg-[#9B5BE9]/70 border-[#7B28E0] border-[1px] px-2 rounded-2xl">
                             <div class="dm-sans-bold text-[24px] text-white font-outline w-full h-auto">
