@@ -40,7 +40,7 @@ const getAngle = (index: number) => {
 const getOffset = (index: number) => {
   const offsets = [
     'translate(10px, 15px)',
-    'translate(-20px, -10px)',
+    'translate(-10px, -10px)',
     'translate(5px, 10px)',
     'translate(-5px, -10px)',
     'translate(15px, -5px)',
