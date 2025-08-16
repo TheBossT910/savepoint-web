@@ -123,3 +123,5 @@ SavePoint bridges that gap.
 
 <!--[https://savepoint.com](https://savepoint.com)  -->
 <!--*Hosted via ??? *-->
+
+Copyright ©️ 2025 Taha Rashid. All rights reserved.
