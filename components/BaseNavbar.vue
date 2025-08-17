@@ -3,7 +3,7 @@
 
 <template>
     <div>
-        <div class="flex h-[60px] bg-base-300/0 backdrop-blur-[3px] border-base-300/10 border-b-[1px] shadow-sm sticky top-0 z-50">
+        <div class="flex h-[60px] bg-base-300/0 backdrop-blur-[3px] border-base-300/10 border-b-[1px] shadow-sm sticky top-0">
             <!-- SavePoint logo -->
             <div class="my-auto">
                 <div class="dropdown">
