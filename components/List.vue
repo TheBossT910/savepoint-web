@@ -96,7 +96,7 @@
 
                 <div class="mt-auto">
                     <!-- Buy button -->
-                    <div class="flex flex-wrap items-center my-3 mx-2 bg-[#9B5BE9]/70 hover:bg-[#7B28E0]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[28px] text-white rounded-2xl transition-all duration-300 ease-out will-change-transform">
+                    <div class="flex flex-wrap items-center my-3 mx-2 bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[28px] text-white rounded-2xl transition-all duration-300 ease-out will-change-transform">
                         <div class="mx-auto py-2">
                             $ 79.99
                         </div>
