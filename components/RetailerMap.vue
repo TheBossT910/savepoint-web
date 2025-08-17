@@ -3,9 +3,9 @@
 
 <template>
     <div>
-        <div class=" bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-3xl p-1 shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out">
+        <div class="bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-3xl p-1 shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out">
             <!-- Top -->
-            <div class="relative h-3/5 md:aspect-[3/2] min-h-[400px] md:h-auto">
+            <div class="relative h-[60vh]">
                 <!-- Map -->
                 <img src="public/images/map.png" class="absolute inset-0 p-2 pb-0 w-full h-full  object-cover rounded-t-2xl">
 
