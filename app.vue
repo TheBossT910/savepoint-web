@@ -6,7 +6,7 @@
     </div>
 
     <!-- Navbar dropdown button -->
-    <div id="dropdown-portal" class="absolute top-4 left-0 z-50"></div>
+    <div id="dropdown-portal" class="fixed z-50"/>
 
     <!-- This displays our current pages -->
     <div class="bg-dot">
