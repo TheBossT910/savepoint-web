@@ -5,6 +5,9 @@
       <BaseNavbar :links=links />
     </div>
 
+    <!-- Navbar dropdown button -->
+    <div id="dropdown-portal" class="absolute top-5 left-0 z-50 lg:hidden"/>
+
     <!-- This displays our current pages -->
     <div class="bg-dot">
       <NuxtPage />
