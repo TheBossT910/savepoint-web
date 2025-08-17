@@ -13,8 +13,8 @@
 
                 <!-- Actual button -->
                 <Teleport to="#dropdown-portal">
-                    <div class="dropdown">
-                        <button class="btn btn-sm btn-ghost ml-2 pt-1 mr-1 lg:hidden" tabindex="0">
+                    <div class="dropdown lg:hidden">
+                        <button class="btn btn-sm btn-ghost ml-2 pt-1 mr-1" tabindex="0">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
                         </button>
 
