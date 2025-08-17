@@ -26,7 +26,7 @@
                     </div>
                 </Teleport>
 
-                <a href="#" class="dm-sans-bold text-[32px] text-white font-outline lg:ml-3">
+                <a href="/" class="dm-sans-bold text-[32px] text-white font-outline lg:ml-3">
                     SavePoint
                 </a>
             </div>
