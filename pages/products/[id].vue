@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Splash -->
-        <div class="relative pt-30 pb-10 px-10">
+        <div class="relative pt-30 pb-10 px-2 sm:px-5 md:px-10">
             <!-- Splash image -->
             <img 
             src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
