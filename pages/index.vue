@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- Description -->
-                <div class="mt-5 w-full md:w-[50%] xl:w-[35%] bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl">
+                <div class="mt-5 w-full md:w-[50%] xl:w-[35%] bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl transition-all duration-300">
                     <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
                         Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!
                     </div>
