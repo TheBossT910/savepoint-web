@@ -2,26 +2,24 @@
 <!-- Jul 1, 2025 -->
 
 <template>
-    <div>
-        <div class="relative flex">
-            <!-- Scroll left -->
-            <div class="absolute flex h-[75%] pl-2 z-1">
-                <button class="btn m-auto" :disabled="!(groupPosition != 0)" @click="scrollToSlide(`slide${groupPosition - 1}`); groupPosition = groupPosition - 1;">❮</button>
-            </div>
+    <div class="relative flex">
+        <!-- Scroll left -->
+        <div class="absolute flex h-[75%] pl-2 z-1">
+            <button class="btn m-auto" :disabled="!(groupPosition != 0)" @click="scrollToSlide(`slide${groupPosition - 1}`); groupPosition = groupPosition - 1;">❮</button>
+        </div>
 
-            <!-- Carousel -->
-            <div class="relative flex rounded overflow-hidden space-x-4 p-4">
-                <div v-for="(groupNumber, index) in groupSize" :id="`slide${ index }`" :key="index" class="flex space-x-4">  
-                    <div v-for="(product, productIndex) in props.productCardProps.slice(index * displaySize, displaySize + (index * displaySize))" :key="productIndex" class="carousel-item w-40 sm:w-65 md:w-75">
-                        <GameCard :="product" />
-                    </div>
+        <!-- Carousel -->
+        <div class="relative flex rounded overflow-hidden space-x-4 p-4">
+            <div v-for="(groupNumber, index) in groupSize" :id="`slide${ index }`" :key="index" class="flex space-x-4">  
+                <div v-for="(product, productIndex) in props.productCardProps.slice(index * displaySize, displaySize + (index * displaySize))" :key="productIndex" class="carousel-item w-65 md:w-80">
+                    <GameCard :="product" />
                 </div>
             </div>
+        </div>
 
-            <!-- Scroll right -->
-            <div class="absolute flex right-0 pr-2 h-[75%] z-1">
-                <button class="btn m-auto" :disabled="!(groupPosition + 1 != groupSize)" @click="scrollToSlide(`slide${groupPosition + 1}`); groupPosition = groupPosition + 1;">❯</button>
-            </div>
+        <!-- Scroll right -->
+        <div class="absolute flex right-0 pr-2 h-[75%] z-1">
+            <button class="btn m-auto" :disabled="!(groupPosition + 1 != groupSize)" @click="scrollToSlide(`slide${groupPosition + 1}`); groupPosition = groupPosition + 1;">❯</button>
         </div>
     </div>
 </template>
