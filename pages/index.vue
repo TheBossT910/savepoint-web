@@ -38,12 +38,9 @@
                 </div>
 
                 <!-- Description -->
-                <div class="gradient-border-frame-xl mt-5 w-full md:w-[50%] xl:w-[35%]">
-                    <!-- bg-gray-200/60 -->
-                    <div class="inner-xl bg-gradient-to-b from-[#26C1E0]/70 to-[#7B28E0]/70 backdrop-blur-[5px]">
-                        <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
-                            Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!
-                        </div>
+                <div class="mt-5 w-full md:w-[50%] xl:w-[35%] bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl">
+                    <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
+                        Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!
                     </div>
                 </div>
 
@@ -94,33 +91,33 @@
         <!-- Content -->
         <div class="my-10 mx-2 sm:mx-5 md:mx-20">
             <!-- Filter Buttons -->
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-4">
-                <div class="flex bg-[#9B5BE9]/70 hover:bg-[#9B5BE9] border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-4">                
+                <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                     <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
                         Top Rated
                     </div>
                 </div>
-                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                     <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
                         New Releases
                     </div>
                 </div>
-                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                     <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
                         Classics
                     </div>
                 </div>
-                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                     <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
                         Trending Now
                     </div>
                 </div>
-                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                     <div class="m-auto dm-sans-bold text-[32px] text-white font-outline">
                         Indie Picks
                     </div>
                 </div>
-                <div class="flex bg-[#10A4DA]/70 hover:bg-[#9B5BE9]/70 border-[1px] border-[#26C1E0]/70 hover:border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                     <div class="mx-auto dm-sans-bold text-[32px] text-white font-outline">
                         Multiplayer
                     </div>
