@@ -3,7 +3,7 @@
 
 <template>
     <!-- Stack of posters -->
-    <div class="relative flex justify-center items-center">
+    <div class="relative flex justify-center items-center w-full">
       <!-- Sets the height for the view -->
       <div class="invisible w-[100%]">
         <GamePoster v-bind="props.gamePoster[0]" />
@@ -18,7 +18,7 @@
           zIndex: `${index}`
         }"
       >
-        <GamePoster :id="game.id" :image="game.coverImage" />
+        <GamePoster :id="game.id" :image="game.coverImage" class="w-full" />
       </div>
     </div>
 </template>
