@@ -24,7 +24,7 @@
                     <img
                     v-for="logo in props.platformLogos" :key="logo" 
                     :src="logo"
-                    class="mx-auto max-h-[13px] invert"
+                    class="mx-auto max-h-[13px] my-1 invert"
                     >
                 </div>
             </div>
