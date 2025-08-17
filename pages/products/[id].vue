@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Splash -->
-        <div class="relative pt-30 pb-10 px-2 sm:px-5 md:px-10">
+        <div class="relative pt-30 pb-10 px-2 sm:px-5 md:px-20">
             <!-- Splash image -->
             <img 
             src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
@@ -222,7 +222,7 @@
             </div>
 
             <!-- Visible description -->
-            <div class="absolute top-0 z-10 mx-auto px-10 py-20 space-y-10">
+            <div class="absolute top-0 z-10 mx-auto px-2 sm:px-5 md:px-20 py-20 space-y-10">
                 <div class="gradient-border-frame-xl mt-5 w-full lg:w-[50%] h-auto backdrop-blur-[5px] rounded-xl">
                     <div class="inner-xl bg-gradient-to-b from-[#26C1E0]/70 to-[#7B28E0]/70 px-10 py-8 dm-sans-bold text-[18px] text-white font-outline">
                         {{ description }}
@@ -231,7 +231,7 @@
             </div>
         </div>
 
-        <div class="relative px-10">
+        <div class="relative mt-5 px-2 sm:px-5 md:px-20">
             <div class="dm-sans-bold text-[48px] text-base-900 dark-font-outline w-full h-auto">
                 Retailers
             </div>

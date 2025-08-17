@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="relative py-30 px-2 sm:px-5 md:px-10">
+        <div class="relative py-30 px-2 sm:px-5 md:px-20">
             <!-- Splash image -->
             <img 
             src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Content -->
-        <div class="my-10 mx-2 sm:mx-5 md:mx-10">
+        <div class="my-10 mx-2 sm:mx-5 md:mx-20">
             <!-- Filter Buttons -->
             <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-4 gap-y-4">
                 <div class="flex bg-[#9B5BE9]/70 hover:bg-[#9B5BE9] border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
