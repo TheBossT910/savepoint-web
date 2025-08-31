@@ -6,8 +6,8 @@
         <!-- Platform badges -->
         <div class="flex">
             <div class="m-auto py-2 flex flex-wrap gap-x-4 gap-y-2">
-                <a v-for="logo in platformLogos" :key="logo" href="#">
-                    <img :src="logo" class="mx-auto max-h-[20px]">
+                <a v-for="logo in platformLogos" :key="logo.name" :href="logo.link">
+                    <img :src="logo.image" class="mx-auto max-h-[20px]">
                 </a>
             </div>
         </div>
@@ -31,9 +31,23 @@
 </template>
 
 <script setup lang="ts">
-const platformLogos: string[] = [
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png',
-    'https://www.svgrepo.com/show/445786/github.svg',
-    'https://www.svgrepo.com/show/452138/youtube.svg',
+import type { Link } from '~/types';
+
+const platformLogos: Link[] = [
+    {
+        link: 'https://www.instagram.com/thebosst710192/',
+        name: 'Instagram',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png'
+    },
+    {
+        link: 'https://github.com/TheBossT910',
+        name: 'GitHub',
+        image: 'https://www.svgrepo.com/show/445786/github.svg'
+    },
+    {
+        link: 'https://www.linkedin.com/in/taha-rashid192/',
+        name: 'LinkedIn',
+        image: 'https://www.svgrepo.com/show/75820/linkedin.svg'
+    }
 ]
 </script>

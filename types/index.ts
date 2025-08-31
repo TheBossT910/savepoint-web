@@ -3,7 +3,8 @@
 
 export interface Link {
     link: string
-    name: string
+    name?: string
+    image?: string
 }
 
 export interface IProductCardProp {
