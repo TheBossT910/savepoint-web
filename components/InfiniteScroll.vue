@@ -13,7 +13,7 @@
       :key="index"
       class="flex-shrink-0 mx-2"
       >
-      <GamePoster v-if="poster" :id="index" :image="img" class="w-auto object-cover" :style="{ height: height }"/>
+      <LazyGamePoster v-if="poster" :id="index" :image="img" class="w-auto object-cover" :style="{ height: height }"/>
       <img v-else :src="img" class="w-auto object-cover" :style="{ height: height }">
       </div>
     </div>

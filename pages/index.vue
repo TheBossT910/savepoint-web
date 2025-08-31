@@ -133,40 +133,40 @@
                 </div>
             </div>
 
-            <BaseCarousel :product-card-props="productCardProps"/>
+            <LazyBaseCarousel :product-card-props="productCardProps"/>
 
             <div class="md:flex px-4">
                 <div class="md:w-[70%] flex">
-                    <GameCardWithPreview :="productCardProps[0]" class="m-auto w-full"/>
+                    <LazyGameCardWithPreview :="productCardProps[0]" class="m-auto w-full"/>
                 </div>
                 <div class="md:w-[30%] flex">
-                    <GameStack :game-poster="productCardProps" class="m-auto"/>
+                    <LazyGameStack :game-poster="productCardProps" class="m-auto"/>
                 </div>
             </div>
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">All-Time Favourites</div>
-                <BaseCarousel :product-card-props="productCardProps" />
+                <LazyBaseCarousel :product-card-props="productCardProps" />
             </div>
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Featured</div>
-                <BaseCarousel :product-card-props="productCardProps" />
+                <LazyBaseCarousel :product-card-props="productCardProps" />
             </div>
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Staff-Favourite Stacks</div>
                 <div class="sm:flex gap-x-10 px-4">
-                    <GameStack :game-poster="productCardProps" class="m-auto"/>
-                    <GameStack :game-poster="productCardProps" class="m-auto"/>
-                    <GameStack :game-poster="productCardProps" class="m-auto"/>
+                    <LazyGameStack :game-poster="productCardProps" class="m-auto"/>
+                    <LazyGameStack :game-poster="productCardProps" class="m-auto"/>
+                    <LazyGameStack :game-poster="productCardProps" class="m-auto"/>
                 </div>
             </div>
 
             <div class="flex flex-col mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Recommended</div>
                 <div class="px-4">
-                    <GameCardWithPreview :="productCardProps[0]" class="m-auto w-full"/>
+                    <LazyGameCardWithPreview :="productCardProps[0]" class="m-auto w-full"/>
                 </div>
             </div>
         </div>

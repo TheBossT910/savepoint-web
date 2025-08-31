@@ -18,7 +18,7 @@
           zIndex: `${index}`
         }"
       >
-        <GamePoster :id="game.id" :image="game.coverImage" class="w-full" />
+        <LazyGamePoster :id="game.id" :image="game.coverImage" class="w-full" />
       </div>
     </div>
 </template>
