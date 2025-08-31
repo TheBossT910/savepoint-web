@@ -176,9 +176,9 @@
         <div class="relative w-full">
             <!-- Image container -->
             <div class="sticky inset-0 w-full h-full z-0 bg-black space-y-4">
-                <InfiniteScroll :images="images.slice(0, 3)" :height="'[33vh]'" :duration="180" :poster="false"/>
-                <InfiniteScroll :images="images.slice(3, 6)" :height="'[33vh]'" :duration="180" :poster="false" reverse/>
-                <InfiniteScroll :images="images.slice(6)" :height="'[33vh]'" :duration="180" :poster="false"/>
+                <InfiniteScroll :images="images.slice(0, 3)" :height="'33vh'" :duration="180" :poster="false"/>
+                <InfiniteScroll :images="images.slice(3, 6)" :height="'33vh'" :duration="180" :poster="false" reverse/>
+                <InfiniteScroll :images="images.slice(6)" :height="'33vh'" :duration="180" :poster="false"/>
             </div>
 
             <!-- Dummy hidden description -->

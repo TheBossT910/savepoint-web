@@ -3,9 +3,9 @@
         <div class="relative pt-20 pb-10 px-2 sm:px-5 md:px-20 bg-gradient-to-l from-[#26C1E0]/40 to-[#7B28E0]/40">
             <div class="space-y-4 inset-0 h-full w-full object-cover">
                 <!-- Images -->
-                <InfiniteScroll :images="images.slice(0, 3)" :height="'40'" :duration="50" class="opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''"/>
-                <InfiniteScroll :images="images.slice(3, 6)" :height="'40'" reverse :duration="50" class="opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }"/>
-                <InfiniteScroll :images="images.slice(6)" :height="'40'" :duration="50" class="opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `400ms` }"/>
+                <InfiniteScroll :images="images.slice(0, 3)" :height="'10rem'" :duration="50" class="opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''"/>
+                <InfiniteScroll :images="images.slice(3, 6)" :height="'10rem'" reverse :duration="50" class="opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }"/>
+                <InfiniteScroll :images="images.slice(6)" :height="'10rem'" :duration="50" class="opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `400ms` }"/>
 
                 <!-- Overlay on splash image -->
                 <div class="absolute inset-0 bg-black/20"></div>
