@@ -24,7 +24,7 @@
             <!-- All games -->
             <div class="grid gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
                 <div v-for="(product, index) in productCardProps" :key="index">  
-                    <GameCard :="product" />
+                    <GameCard :="product" class="h-full"/>
                 </div>
             </div>
         </div>
