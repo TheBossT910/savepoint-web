@@ -21,17 +21,12 @@
 
         <!-- Content -->
         <div class="my-10 mx-2 sm:mx-5 md:mx-20">
-            <!-- See more button -->
-            <div class="flex mt-2">
-                <div class="inline-flex ml-auto relative py-1 px-4 bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl transition-all duration-300">
-                    <span class="mx-auto dm-sans-bold text-[14px] text-white">
-                        See More >
-                    </span>
+            <!-- All games -->
+            <div class="grid gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+                <div v-for="(product, index) in productCardProps" :key="index">  
+                    <GameCard :="product" />
                 </div>
             </div>
-
-            <!-- All games -->
-            <BaseCarousel :product-card-props="productCardProps"/>
         </div>
     </div>
 </template>
