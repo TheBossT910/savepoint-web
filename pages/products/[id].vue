@@ -166,11 +166,11 @@
                 </div>
 
                 <!-- Card (on >=md) -->
-                <GamePoster :id="1" :image="coverImage" class="hidden md:flex w-full lg:w-[40%]" />
+                <GamePoster :id="1" :image="coverImage" class="hidden md:flex w-full h-full lg:w-[40%]" />
             </div>
 
             <!-- Card (on <md) -->
-            <GamePoster :id="1" :image="coverImage" class="mx-auto md:hidden w-[70%] md:w-75" />
+            <GamePoster :id="1" :image="coverImage" class="mx-auto h-full md:hidden w-[70%] md:w-75" />
         </div>
 
         <div class="relative w-full">
