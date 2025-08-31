@@ -175,41 +175,10 @@
 
         <div class="relative w-full">
             <!-- Image container -->
-            <div class="sticky inset-0 w-full h-full z-0 bg-black">
-                <div class="overflow-hidden">
-                    <!-- Top -->
-                    <div class="flex gap-x-4 mb-4 animate-scroll-start">
-                        <img :src="images[0]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[1]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[2]" class="w-[100vw] h-[33vh] object-cover">
-                        <!-- Repeat -->
-                         <img :src="images[0]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[1]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[2]" class="w-[100vw] h-[33vh] object-cover">
-                    </div>
-
-                    <!-- Center -->
-                    <div class="flex gap-x-4 mb-4 animate-scroll-end">
-                        <img :src="images[3]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[4]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[5]" class="w-[100vw] h-[33vh] object-cover">
-                        <!-- Repeat -->
-                         <img :src="images[3]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[4]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[5]" class="w-[100vw] h-[33vh] object-cover">
-                    </div>
-
-                    <!-- Bottom -->
-                    <div class="flex gap-x-4 animate-scroll-start">
-                        <img :src="images[6]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[7]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[8]" class="w-[100vw] h-[33vh] object-cover">
-                        <!-- Repeat -->
-                         <img :src="images[6]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[7]" class="w-[100vw] h-[33vh] object-cover">
-                        <img :src="images[8]" class="w-[100vw] h-[33vh] object-cover">
-                    </div>
-                </div>
+            <div class="sticky inset-0 w-full h-full z-0 bg-black space-y-4">
+                <InfiniteScroll :images="images.slice(0, 3)" :height="'[33vh]'" :duration="180" :poster="false"/>
+                <InfiniteScroll :images="images.slice(3, 6)" :height="'[33vh]'" :duration="180" :poster="false" reverse/>
+                <InfiniteScroll :images="images.slice(6)" :height="'[33vh]'" :duration="180" :poster="false"/>
             </div>
 
             <!-- Dummy hidden description -->

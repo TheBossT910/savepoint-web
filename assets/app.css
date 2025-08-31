@@ -100,24 +100,6 @@
   }
 }
 
-/* Scrolling for images in /games/:id */
-@keyframes scroll {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll-start {
-  animation: scroll 60s linear infinite;
-}
-
-.animate-scroll-end {
-  animation: scroll 60s linear infinite reverse;
-}
-
 /* Container gradient */
 /* Container with gradient border */
 .gradient-border-frame-xl {
@@ -173,7 +155,6 @@
     --dot-bg: #ffffff;
   }
 }
-
 
 .bg-dot::before {
   content: "";

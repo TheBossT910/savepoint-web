@@ -13,7 +13,8 @@
       :key="index"
       class="flex-shrink-0 mx-2"
       >
-      <GamePoster :id="index" :image="img" :class="`h-${height} w-auto object-cover`"/>
+      <GamePoster v-if="poster" :id="index" :image="img" :class="`h-${height} w-auto object-cover`"/>
+      <img v-else :src="img" :class="`h-${height} w-auto object-cover`">
       </div>
     </div>
   </div>
@@ -25,11 +26,13 @@ import { computed } from "vue"
 const props = withDefaults(
     defineProps<{
         images: string[]
-        height: number
+        height: string
+        poster?: boolean
         reverse?: boolean
         duration?: number
     }>(),
     {
+        poster: true,
         reverse: false,
         duration: 20
     }

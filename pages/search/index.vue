@@ -3,9 +3,9 @@
         <div class="relative pt-20 pb-10 px-2 sm:px-5 md:px-20">
             <div class="space-y-4 inset-0 h-full w-full object-cover">
                 <!-- Images -->
-                <InfiniteScroll :images="images.slice(0, 3)" :height="40" :duration="50" />
-                <InfiniteScroll :images="images.slice(3, 6)" :height="40" reverse :duration="50"/>
-                <InfiniteScroll :images="images.slice(6)" :height="40" :duration="50"/>
+                <InfiniteScroll :images="images.slice(0, 3)" :height="'40'" :duration="50" />
+                <InfiniteScroll :images="images.slice(3, 6)" :height="'40'" reverse :duration="50"/>
+                <InfiniteScroll :images="images.slice(6)" :height="'40'" :duration="50"/>
 
                 <!-- Overlay on splash image -->
                 <div class="absolute inset-0 bg-black/30"></div>
