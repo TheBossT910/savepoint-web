@@ -5,7 +5,7 @@
     <!-- Outer Card -->
     <div :id="`game-poster-${props.id}`" class="flex w-full bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-xl p-1 shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out">
         <!-- Image -->
-        <img :src="props.image" class="w-full aspect-[2/3] object-cover rounded-xl" loading="lazy">
+        <img :src="props.image" class="w-full h-full aspect-[2/3] object-cover rounded-xl" loading="lazy">
     </div>
 </template>
 
