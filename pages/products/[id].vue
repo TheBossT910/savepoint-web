@@ -26,7 +26,7 @@
                     </div>
 
                     <!-- Reviews -->
-                    <div class="flex mt-2 w-100 h-[20px]">
+                    <div class="flex mt-2 w-100 h-[20px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }">
                         <!-- Metacritic -->
                         <div class="flex px-2 z-1 rounded-xl">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Metacritic_M.png" class="ml-1 h-[17px] my-auto">
@@ -41,7 +41,7 @@
                     </div>
 
                     <!-- Buttons -->
-                    <div class="mt-2 flex flex-wrap gap-2">
+                    <div class="mt-2 flex flex-wrap gap-2 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `400ms` }">
                         <!-- Buy -->
                         <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@
                     </div>
 
                     <!-- Platform badges-->
-                    <div class="mt-2 mb-5 flex gap-x-[16px]">
+                    <div class="mt-2 mb-5 flex gap-x-[16px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `400ms` }">
                         <div v-for="logo in platformLogos" :key="logo" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
                                 <img :src="logo" class="h-[17px] invert">
@@ -83,7 +83,7 @@
                     </div>
 
                     <!-- Preview video -->
-                    <div class="flex overflow-x-auto gap-x-4 z-1 mb-10">
+                    <div class="flex overflow-x-auto gap-x-4 z-1 mb-10 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `600ms` }">
                         <iframe 
                         class="aspect-16/9 w-full lg:w-[50%] rounded-xl"
                         src="https://www.youtube.com/embed/SKpSpvFCZRw" 
@@ -122,7 +122,7 @@
                     </div>
 
                     <!-- HLTB -->
-                    <div class="my-5 flex flex-wrap gap-2">
+                    <div class="my-5 flex flex-wrap gap-2 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `800ms` }">
                         <!-- Main -->
                         <div class="flex bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-md p-1 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
@@ -218,6 +218,12 @@
 </template>
 
 <script setup lang="ts">
+const loaded = ref(false)
+
+onMounted(() => {
+  loaded.value = true
+})
+
 // for splash image
 const platformLogos = [
     'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
