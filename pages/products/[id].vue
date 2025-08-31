@@ -185,7 +185,7 @@
             <div class="invisible z-10 mx-auto px-2 sm:px-5 md:px-20 py-20 space-y-10">
                 <div class="mt-5 w-full lg:w-[50%] h-auto backdrop-blur-[1px]">
                     <div class="rounded-2xl bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 px-10 py-8 dm-sans-bold text-[18px] text-white font-outline">
-                        {{ description }}
+                        <p class="whitespace-pre-line">{{ description }}</p>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
             <div class="absolute top-0 z-10 mx-auto px-2 sm:px-5 md:px-20 py-20 space-y-10">
                 <div class="mt-5 w-full lg:w-[50%] h-auto backdrop-blur-[1px]">
                     <div class="rounded-2xl bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 px-10 py-8 dm-sans-bold text-[18px] text-white font-outline">
-                        {{ description }}
+                        <p class="whitespace-pre-line">{{ description }}</p>
                     </div>
                 </div>
             </div>
@@ -234,20 +234,7 @@ const platformLogos = [
 
 const coverImage = 'https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_600x900_2x.jpg?t=1733297203'
 
-const description = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, maiores aut. Consectetur alias assumenda totam nemo, id laboriosam necessitatibus minima nisi, dolor delectus natus accusamus voluptates. Enim labore sit delectus.
-                    Placeat laborum commodi accusamus nulla nisi optio nam voluptatum eligendi in reiciendis sint ipsum pariatur, impedit exercitationem sunt vero. Repudiandae quisquam repellendus quaerat in quidem eligendi voluptas illo officiis? Tempora?
-                    Expedita enim a quibusdam magnam ipsam quia, suscipit saepe dicta? Eaque omnis consequatur, ad eligendi est cupiditate atque odio blanditiis soluta temporibus natus ut quae. Libero soluta accusantium inventore omnis.
-                    Suscipit dolorum quod itaque neque odit ullam quisquam, inventore ad architecto fuga a sint nemo quasi doloribus et. Quam molestias, mollitia nesciunt cupiditate natus nulla suscipit voluptatum culpa quos officia!
-                    Distinctio blanditiis quam deleniti recusandae alias at enim quas ab quod nemo inventore dolore, similique eius perferendis? Laborum at minus aut! Nam qui fuga ipsum dolores ea nihil dicta dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, tenetur? Possimus nisi corporis ipsa veritatis quis voluptates ullam consequatur commodi. Ex tempore ab laudantium dolores, natus architecto officiis sunt excepturi?
-                    Explicabo dolorum natus sapiente sit, quasi necessitatibus nisi quae quia optio? Tempora facilis, magni tempore beatae at ut, reprehenderit commodi quam, consequatur nemo odio repudiandae laboriosam cum obcaecati magnam asperiores.
-                    Nulla animi placeat labore accusantium cumque aliquid laudantium sit voluptate doloremque itaque magni totam quibusdam aperiam corrupti ipsum odio minima esse architecto ipsam sed accusamus, dolorum deserunt cupiditate nobis. Fuga?
-                    Reprehenderit repudiandae minus eaque quod obcaecati a adipisci rem temporibus facilis porro iste doloremque, quisquam ad. Velit consequatur, illum quo officiis debitis adipisci, fuga praesentium unde magni asperiores earum libero!
-                    Nobis excepturi eaque quibusdam totam consequuntur qui harum voluptate quasi eos aperiam id laborum itaque iste sint, quas consectetur necessitatibus quae voluptatem. Accusantium maiores architecto possimus nobis minus similique iste.
-                    Tenetur, cum maxime distinctio voluptatem, sint dolorum at qui harum earum molestias, corrupti deserunt debitis eligendi cupiditate quisquam dolores! Incidunt repellendus eius esse illum sequi, aspernatur ducimus commodi asperiores at.
-                    Minima fuga reprehenderit eius, dolorem pariatur excepturi natus, vel assumenda enim amet eveniet perferendis labore ipsum praesentium nihil cupiditate ipsam maiores ad. Esse sint provident omnis, pariatur consequatur deleniti dolor.
-                    Fugit consequatur architecto eveniet, eaque molestiae iure aliquam enim molestias sit, ut fuga. Dicta reprehenderit vero iusto quae excepturi nemo. Eum obcaecati, odio nihil delectus magni perspiciatis minima velit id.
-                    Incidunt impedit maxime consectetur accusamus consequuntur iste dolorem officiis at dignissimos, ex quos odio voluptas dolore dolor voluptatibus placeat illum cum? Fugiat quisquam aliquid reiciendis voluptates cupiditate? In, est esse.
-                    Enim ut blanditiis, quisquam reiciendis, dolor laudantium voluptate laborum est ratione nulla sit at veniam deserunt maiores molestiae magnam commodi. Quisquam id quam iusto dolores omnis adipisci culpa assumenda reiciendis!`
+const description = `Forced to transfer to a high school in Tokyo, the protagonist has a strange dream.\n\n“You truly are a prisoner of fate. In the near future, ruin awaits you.”\n\nWith the goal of “rehabilitation” looming overhead, he must save others from distorted desires by donning the mask of a Phantom Thief`
 const images = [
     'https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp',
     'https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp',
