@@ -10,6 +10,7 @@
             <img 
             :src="props.coverImage"
             class="w-full h-full object-cover rounded-2xl"
+            loading="lazy"
             >
 
             <!-- Buy button -->
@@ -84,6 +85,7 @@
                     v-for="logo in props.platformLogos" :key="logo" 
                     :src="logo"
                     class="mx-auto h-[10px] sm:h-[17px] dark:invert"
+                    loading="lazy"
                     >
                 </div>
 

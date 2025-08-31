@@ -7,10 +7,10 @@
         <div class="flex w-full h-full bg-gray-100/30 dark:bg-gray-500/30 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[1px] rounded-2xl p-[5px] shadow-[0_0_10px_rgba(38,75,224,0.25)] transition-all duration-300 ease-out will-change-transform">
             <!-- Image -->
             <div class="w-1/3 hidden lg:block">
-                <img :src="props.horizontalImage" class="w-full h-full object-cover rounded-2xl">
+                <img :src="props.horizontalImage" class="w-full h-full object-cover rounded-2xl" loading="lazy">
             </div>
             <div class="lg:hidden">
-                <img :src="props.horizontalImage" class="absolute inset-0 w-full h-full object-cover rounded-2xl">
+                <img :src="props.horizontalImage" class="absolute inset-0 w-full h-full object-cover rounded-2xl" loading="lazy">
                 <div class="absolute inset-0 bg-gray-600/20 rounded-2xl backdrop-blur-[2px]"></div>
             </div>
             
@@ -49,6 +49,7 @@
                         <img
                         :src="review.logo"
                         class="m-auto lg:h-[17px] md:h-[10px] h-[8px]"
+                        loading="lazy"
                         >
                         <div class="px-1 dm-sans-bold w-full m-auto text-[12px]">
                             <span class="hidden lg:flex text-base-900 dark-font-outline">
@@ -106,10 +107,10 @@
                     <div class="flex mx-2">
                         <div v-for="logo in props.platformLogos" :key="logo" class="flex mx-1 mb-2 w-full h-full rounded-xl bg-gray-100/30 dark:bg-gray-500/30 hover:bg-gray-300/60 hover:dark:bg-gray-500/60 border-[1px] border-gray-300/70 dark:border-gray-500/70 backdrop-blur-[5px] p-[5px] shadow-sm dark:shadow-gray-400/60 transition-all duration-300 ease-out will-change-transform">
                             <div class="m-auto p-3 hidden lg:block">
-                                <img :src="logo" class="max-h-[25px] m-auto dark:invert">
+                                <img :src="logo" class="max-h-[25px] m-auto dark:invert" loading="lazy">
                             </div>
                             <div class="m-auto p-3 lg:hidden">
-                                <img :src="logo" class="max-h-[25px] m-auto invert">
+                                <img :src="logo" class="max-h-[25px] m-auto invert" loading="lazy">
                             </div>
                         </div>
                     </div>

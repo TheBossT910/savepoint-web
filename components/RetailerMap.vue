@@ -7,7 +7,7 @@
             <!-- Top -->
             <div class="relative h-[60vh]">
                 <!-- Map -->
-                <img src="public/images/map.png" class="absolute inset-0 p-2 pb-0 w-full h-full  object-cover rounded-t-2xl">
+                <img src="public/images/map.png" class="absolute inset-0 p-2 pb-0 w-full h-full  object-cover rounded-t-2xl" loading="lazy">
 
                 <!-- Address -->
                 <div class="absolute bottom-2 w-full">

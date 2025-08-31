@@ -9,6 +9,7 @@
             <img 
             :src="props.coverImage"
             class="w-full aspect-[3/4] object-cover rounded-t-[12px]"
+            loading="lazy"
             >
 
             <div class="flex absolute top-[16px] left-0 right-0 pl-[16px] justify-between">
@@ -131,6 +132,7 @@
                     v-for="logo in props.platformLogos" :key="logo" 
                     :src="logo"
                     class="mx-auto h-[17px]"
+                    loading="lazy"
                     >
             </div>
 

@@ -9,6 +9,7 @@
             <img 
             :src="props.coverImage"
             class="w-full aspect-[3/4] object-cover rounded-t-[12px]"
+            loading="lazy"
             >
 
             <!-- Buy button -->
@@ -48,6 +49,7 @@
                     v-for="logo in props.platformLogos" :key="logo" 
                     :src="logo"
                     class="mx-auto h-[17px] dark:invert"
+                    loading="lazy"
                     >
             </div>
 
