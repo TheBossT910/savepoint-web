@@ -13,7 +13,7 @@
       :key="index"
       class="flex-shrink-0 mx-2"
       >
-        <img :src="img" :class="`h-${height} w-auto object-cover`">
+      <GamePoster :id="index" :image="img" :class="`h-${height} w-auto object-cover`"/>
       </div>
     </div>
   </div>
