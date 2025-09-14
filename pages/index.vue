@@ -88,8 +88,6 @@
             </div>
         </div>
 
-        <button class="bg-red-500" @click="callBackend">Click me</button>
-
         <!-- Content -->
         <div class="my-10 mx-2 sm:mx-5 md:mx-20">
             <!-- Filter Buttons -->
@@ -176,19 +174,11 @@
 </template>
 
 <script setup lang="ts">
-import { getGames } from '~/api/gamesService'
-import type { IGame, IProductCardProp } from '~/types'
-
 const loaded = ref(false)
 
 onMounted(() => {
   loaded.value = true
 })
-
-const callBackend = async () => {
-    const games: IGame = (await getGames()).data
-    console.log(games);
-}
 
 const productCardProps: IProductCardProp[] = [
     {
