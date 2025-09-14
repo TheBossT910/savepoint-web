@@ -33,6 +33,33 @@ export interface IGame {
     gameVariations: IGameVariation[]
 }
 
+export interface IGameCreate {
+    dtc: Date
+    name: string
+    description: string
+    cover: string
+    developerIds: number[]
+    genreIds: number[]
+    categoryIds: number[]
+    images: IImage[]
+    videos: IVideo[]
+    gameVariationIds: number[]
+}
+
+export interface IGameUpdate {
+    id: string
+    dtc: Date
+    name: string
+    description: string
+    cover: string
+    developerIds: number[]
+    genreIds: number[]
+    categoryIds: number[]
+    images: IImage[]
+    videos: IVideo[]
+    gameVariationIds: number[]
+}
+
 export interface IDeveloper {
     id: number
     name: string
