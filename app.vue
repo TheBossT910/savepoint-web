@@ -26,7 +26,8 @@ import type { Link } from './types';
 
 // Navbar Links
 const links: Link[] = [
-  { link: '/products/1', name: 'Detail' },
+  { link: '/products/CBBB41CF-7B6E-469A-5C36-08DDE0F2EF3E', name: '1' },
+  { link: '/products/B798433E-F36B-1410-875B-00DF911A1189', name: '2' },
   { link: '/search', name: 'Games' },
   { link: '/developer/components', name: 'Components' },
   { link: '/login', name: 'Sign In' }
