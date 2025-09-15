@@ -92,3 +92,27 @@ export interface IGameVariation {
     id: number
     gameIds: string[]   // array of GUIDs
 }
+
+export interface IList {
+    id: string  // GUID
+    dtc: Date
+    name: string
+    description: string
+    games: IGame[]
+}
+
+export interface IListCreate {
+    id: string  // TODO: remove id field
+    dtc: Date
+    name: string
+    description: string
+    gameIds: string[]   // GUIDs
+}
+
+export interface IListUpdate {
+    id: string  // GUID
+    dtc: Date
+    name: string
+    description: string
+    gameIds: string[]   // GUIDs
+}
