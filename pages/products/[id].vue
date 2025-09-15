@@ -16,7 +16,7 @@
                 <div class="flex flex-col w-full h-full">
                     <!-- Title -->
                     <div class="flex dm-sans-bold text-[48px] text-white w-full h-auto z-1">
-                        Persona 5: Royal
+                        {{ game?.name }}
                         <!-- Favorite badge -->
                         <div class="ml-2 flex items-center justify-center my-auto text-white dark-font-outline bg-[#EF4444]/70 border-[1px] border-[#F87171]/70 backdrop-blur-[5px] w-[22px] h-[22px] rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -83,37 +83,12 @@
                     </div>
 
                     <!-- Preview video -->
-                    <div class="flex overflow-x-auto gap-x-4 z-1 mb-10 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `400ms` }">
+                    <div v-if="game?.videos" class="flex overflow-x-auto gap-x-4 z-1 mb-10 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `400ms` }">
                         <iframe 
+                        v-for="video in game.videos.map(video => video.url)" 
+                        :key="video"
                         class="aspect-16/9 w-full lg:w-[50%] rounded-xl"
-                        src="https://www.youtube.com/embed/SKpSpvFCZRw" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                        </iframe>
-
-                        <iframe 
-                        class="aspect-16/9 w-full lg:w-[50%] rounded-xl"
-                        src="https://www.youtube.com/embed/o9QjlLdYK5I" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                        </iframe>
-
-                        <iframe 
-                        class="aspect-16/9 w-full lg:w-[50%] rounded-xl"
-                        src="https://www.youtube.com/embed/91tGkPg1txE" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                        </iframe>
-
-                        <iframe 
-                        class="aspect-16/9 w-full lg:w-[50%] rounded-xl"
-                        src="https://www.youtube.com/embed/IR_7H_zzU7Y" 
+                        :src="video" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -166,26 +141,26 @@
                 </div>
 
                 <!-- Card (on >=md) -->
-                <LazyGamePoster :id="1" :image="coverImage" class="hidden md:flex w-full h-full lg:w-[40%]" />
+                <LazyGamePoster :id="1" :image="game?.cover" class="hidden md:flex w-full h-full lg:w-[40%]" />
             </div>
 
             <!-- Card (on <md) -->
-            <LazyGamePoster :id="1" :image="coverImage" class="mx-auto h-full md:hidden w-[70%] md:w-75" />
+            <LazyGamePoster :id="1" :image="game?.cover" class="mx-auto h-full md:hidden w-[70%] md:w-75" />
         </div>
 
         <div class="relative w-full">
             <!-- Image container -->
-            <div class="sticky inset-0 w-full h-full z-0 bg-black space-y-4">
-                <InfiniteScroll :images="images.slice(0, 3)" :height="'33vh'" :duration="180" :poster="false"/>
-                <InfiniteScroll :images="images.slice(3, 6)" :height="'33vh'" :duration="180" :poster="false" reverse/>
-                <InfiniteScroll :images="images.slice(6)" :height="'33vh'" :duration="180" :poster="false"/>
+            <div v-if="game?.images" class="sticky inset-0 w-full h-full z-0 bg-black space-y-4">
+                <InfiniteScroll :images="game.images.map(images => images.url).slice(0, 3)" :height="'33vh'" :duration="180" :poster="false"/>
+                <InfiniteScroll :images="game.images.map(images => images.url).slice(3, 6)" :height="'33vh'" :duration="180" :poster="false" reverse/>
+                <InfiniteScroll :images="game.images.map(images => images.url).slice(6)" :height="'33vh'" :duration="180" :poster="false"/>
             </div>
 
             <!-- Dummy hidden description -->
             <div class="invisible z-10 mx-auto px-2 sm:px-5 md:px-20 py-20 space-y-10">
                 <div class="mt-5 w-full lg:w-[50%] h-auto backdrop-blur-[1px]">
                     <div class="rounded-2xl bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 px-10 py-8 dm-sans-bold text-[18px] text-white font-outline">
-                        <p class="whitespace-pre-line">{{ description }}</p>
+                        <p class="whitespace-pre-line">{{ game?.description }}</p>
                     </div>
                 </div>
             </div>
@@ -194,7 +169,7 @@
             <div class="absolute top-0 z-10 mx-auto px-2 sm:px-5 md:px-20 py-20 space-y-10">
                 <div class="mt-5 w-full lg:w-[50%] h-auto backdrop-blur-[1px]">
                     <div class="rounded-2xl bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 px-10 py-8 dm-sans-bold text-[18px] text-white font-outline">
-                        <p class="whitespace-pre-line">{{ description }}</p>
+                        <p class="whitespace-pre-line">{{ game?.description }}</p>
                     </div>
                 </div>
             </div>
@@ -218,10 +193,24 @@
 </template>
 
 <script setup lang="ts">
-const loaded = ref(false)
+import { getGame } from '~/api/gamesService';
+import type { IGame } from '~/types';
 
-onMounted(() => {
+const loaded = ref(false)
+const route = useRoute()
+
+const game = ref<IGame>();
+
+onMounted(async () => {
   loaded.value = true
+  console.log(route.params.id)
+
+  // CBBB41CF-7B6E-469A-5C36-08DDE0F2EF3E is Persona 5: Reload
+  // B798433E-F36B-1410-875B-00DF911A1189 is Metaphor: Refantazio
+  const id = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
+  game.value = (await getGame(id)).data
+  console.log(game)
+  console.log(game.value!.videos.map(video => video.url))
 })
 
 // for splash image
@@ -231,19 +220,4 @@ const platformLogos = [
     'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
 ]
-
-const coverImage = 'https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_600x900_2x.jpg?t=1733297203'
-
-const description = `Forced to transfer to a high school in Tokyo, the protagonist has a strange dream.\n\n“You truly are a prisoner of fate. In the near future, ruin awaits you.”\n\nWith the goal of “rehabilitation” looming overhead, he must save others from distorted desires by donning the mask of a Phantom Thief`
-const images = [
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vq2.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vps.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vpt.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vpu.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vpw.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vq1.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vq0.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vpy.webp',
-    'https://images.igdb.com/igdb/image/upload/t_720p/sc6vpz.webp'
-    ]
 </script>
