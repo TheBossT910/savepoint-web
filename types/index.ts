@@ -115,3 +115,26 @@ export interface IListUpdate {
     description: string
     gameIds: string[]   // GUIDs
 }
+
+export interface IStack {
+    id: string  // GUID
+    dtc: Date
+    name: string
+    descripton: string
+    games: IGame[]
+}
+
+export interface IStackCreate {
+    dtc: Date
+    name: string
+    descripton: string
+    gameIds: string[]   // GUIDs
+}
+
+export interface IStackUpdate {
+    id: string  // GUID
+    dtc: Date
+    name: string
+    descripton: string
+    gameIds: string[]   // GUIDs
+}
