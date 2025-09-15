@@ -3,7 +3,6 @@
 
 import https from "~/server/https"
 import type { IListCreate, IListUpdate } from "~/types"
-// import type { IGameCreate, IGameUpdate } from "~/types";
 
 // get all lists
 export const getLists = () => https.get('lists')
