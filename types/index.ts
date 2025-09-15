@@ -102,7 +102,6 @@ export interface IList {
 }
 
 export interface IListCreate {
-    id: string  // TODO: remove id field
     dtc: Date
     name: string
     description: string
