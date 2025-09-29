@@ -4,7 +4,7 @@
         <div class="relative pt-30 pb-10 px-2 sm:px-5 md:px-20">
             <!-- Splash image -->
             <img 
-            src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
+            :src="game?.splash" 
             alt=""
             class="absolute inset-0 h-full w-full object-cover">
 
@@ -28,15 +28,9 @@
                     <!-- Reviews -->
                     <div class="flex mt-2 w-100 h-[20px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''">
                         <!-- Metacritic -->
-                        <div class="flex px-2 z-1 rounded-xl">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Metacritic_M.png" class="ml-1 h-[17px] my-auto">
-                            <div class="dm-sans-bold text-[12px] text-white ml-1">100/100</div>
-                        </div>
-
-                        <!-- IGN -->
-                        <div class="flex ml-5 px-2 z-1 rounded-xl">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/IGN_logo.svg/2560px-IGN_logo.svg.png" class="h-[17px] my-auto">
-                            <div class="dm-sans-bold text-[12px] text-white ml-1">10/10</div>
+                        <div v-for="review in game?.reviews" :key="review.id" class="flex px-2 z-1 rounded-xl">
+                            <img :src="review.logo" class="ml-1 h-[17px] my-auto">
+                            <div class="dm-sans-bold text-[12px] text-white ml-1">{{ review.rating }}</div>
                         </div>
                     </div>
 
@@ -75,9 +69,11 @@
 
                     <!-- Platform badges-->
                     <div class="mt-2 mb-5 flex gap-x-[16px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }">
-                        <div v-for="logo in platformLogos" :key="logo" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
+                        <div v-for="platform in game?.platforms" :key="platform.id" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                <img :src="logo" class="h-[17px] invert">
+                                <a :href="platform.url">
+                                    <img :src="platform.platformLogo" class="h-[17px] invert">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +100,7 @@
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
                             </svg>
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                Main: 101 hrs
+                                Main: {{ game?.playTime.main }}
                             </div>
                         </div>
 
@@ -114,7 +110,7 @@
                                 <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
                             </svg>
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                Main + Sides: 123 hrs
+                                Main + Sides: {{ game?.playTime.mainPlusSides }}
                             </div>
                         </div>
 
@@ -124,7 +120,7 @@
                                 <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/>
                             </svg>
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                Completionist: 142 Hrs 
+                                Completionist: {{ game?.playTime.completionist }}
                             </div>
                         </div>
 
@@ -134,7 +130,7 @@
                                 <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v3a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 6.5 16h3a1.5 1.5 0 0 0 1.5-1.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 16 9.5v-3A1.5 1.5 0 0 0 14.5 5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 9.5 0zm1.288 2.34a.25.25 0 0 1 .424 0l.799 1.278A.25.25 0 0 1 8.799 4H7.201a.25.25 0 0 1-.212-.382zm0 11.32-.799-1.277A.25.25 0 0 1 7.201 12H8.8a.25.25 0 0 1 .212.383l-.799 1.278a.25.25 0 0 1-.424 0Zm-4.17-4.65-1.279-.798a.25.25 0 0 1 0-.424l1.279-.799A.25.25 0 0 1 4 7.201V8.8a.25.25 0 0 1-.382.212Zm10.043-.798-1.278.799A.25.25 0 0 1 12 8.799V7.2a.25.25 0 0 1 .383-.212l1.278.799a.25.25 0 0 1 0 .424Z"/>
                             </svg>
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                All Styles: 123 Hrs
+                                All Styles: {{ game?.playTime.allStyles }}
                             </div>
                         </div>
                     </div>
@@ -212,12 +208,4 @@ onMounted(async () => {
   console.log(game)
   console.log(game.value!.videos.map(video => video.url))
 })
-
-// for splash image
-const platformLogos = [
-    'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-    'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-]
 </script>
