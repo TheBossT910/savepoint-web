@@ -33,9 +33,9 @@ export interface IGame {
     gameVariations: IGameVariation[]
     splash: string
     region: string
-    reviews: IReview
+    reviews: IReview[]
     playTime: IPlayTime
-    platforms: IPlatform
+    platforms: IPlatform[]
 }
 
 export interface IGameCreate {
@@ -51,7 +51,7 @@ export interface IGameCreate {
     gameVariationIds: number[]
     splash: string
     region: string
-    reviews: IReview
+    reviews: IReview[]
     playTime: IPlayTime
     platformIds: number[]
 }
@@ -70,7 +70,7 @@ export interface IGameUpdate {
     gameVariationIds: number[]
     splash: string
     region: string
-    reviews: IReview
+    reviews: IReview[]
     playTime: IPlayTime
     platformIds: number[]
 }
