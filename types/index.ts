@@ -31,6 +31,11 @@ export interface IGame {
     images: IImage[]
     videos: IVideo[]
     gameVariations: IGameVariation[]
+    splash: string
+    region: string
+    reviews: IReview
+    playTime: IPlayTime
+    platforms: IPlatform
 }
 
 export interface IGameCreate {
@@ -44,6 +49,11 @@ export interface IGameCreate {
     images: IImage[]
     videos: IVideo[]
     gameVariationIds: number[]
+    splash: string
+    region: string
+    reviews: IReview
+    playTime: IPlayTime
+    platformIds: number[]
 }
 
 export interface IGameUpdate {
@@ -58,6 +68,11 @@ export interface IGameUpdate {
     images: IImage[]
     videos: IVideo[]
     gameVariationIds: number[]
+    splash: string
+    region: string
+    reviews: IReview
+    playTime: IPlayTime
+    platformIds: number[]
 }
 
 export interface IDeveloper {
@@ -137,4 +152,32 @@ export interface IStackUpdate {
     name: string
     descripton: string
     gameIds: string[]   // GUIDs
+}
+
+export interface IReview {
+    id: number
+    url?: string
+    source: string
+    rating: string
+    comment?: string
+    logo: string
+}
+
+export interface IPlatform {
+    id: number
+    company?: string
+    hardware: string
+    store?: string
+    hardwareVariation?: string
+    releaseDate: Date
+    platformLogo: string
+    companyLogo?: string
+    url?: string
+}
+
+export interface IPlayTime {
+    main: string
+    mainPlusSides: string
+    completionist: string
+    allStyles: string
 }
