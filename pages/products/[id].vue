@@ -182,20 +182,13 @@
 import { getGame } from '~/api/gamesService';
 import type { IGame } from '~/types';
 
-const loaded = ref(false)
 const route = useRoute()
-
+const loaded = ref(false)
 const game = ref<IGame>();
 
 onMounted(async () => {
   loaded.value = true
-  console.log(route.params.id)
-
-  // CBBB41CF-7B6E-469A-5C36-08DDE0F2EF3E is Persona 5: Reload
-  // B798433E-F36B-1410-875B-00DF911A1189 is Metaphor: Refantazio
   const id = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
   game.value = (await getGame(id)).data
-  console.log(game)
-  console.log(game.value!.videos.map(video => video.url))
 })
 </script>
