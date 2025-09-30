@@ -27,7 +27,6 @@
 
                     <!-- Reviews -->
                     <div class="flex mt-2 w-100 h-[20px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''">
-                        <!-- Metacritic -->
                         <div v-for="review in game?.reviews" :key="review.id" class="flex px-2 z-1 rounded-xl">
                             <img :src="review.logo" class="ml-1 h-[17px] my-auto">
                             <div class="dm-sans-bold text-[12px] text-white ml-1">{{ review.rating }}</div>
@@ -61,7 +60,7 @@
                     <div class="mt-2 mb-5 flex flex-wrap gap-2 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }">
                         <div v-for="platform in game?.platforms" :key="platform.id" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
                             <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                <a :href="platform.url">
+                                <a :href="platform.url" target="_blank">
                                     <img :src="platform.platformLogo" class="h-[17px] invert object-contain">
                                 </a>
                             </div>
