@@ -3,14 +3,14 @@
 
 <template>
     <!-- Stack of posters -->
-    <div class="relative flex justify-center items-center w-full">
+    <div v-if="props.games" class="relative flex justify-center items-center w-full">
       <!-- Sets the height for the view -->
       <div class="invisible w-[100%]">
-        <GamePoster v-bind="props.gamePoster[0]" />
+        <GamePoster :id="0" :image="props.games[0].cover" />
       </div>
 
       <div 
-        v-for="(game, index) in props.gamePoster.slice(0, gamePoster.length >= 5 ? 5: gamePoster.length)" 
+        v-for="(game, index) in props.games.slice(0, games.length >= 5 ? 5: games.length)" 
         :key="game.id"
         class="absolute transition-transform duration-300 w-[80%]"
         :style="{ 
@@ -18,16 +18,16 @@
           zIndex: `${index}`
         }"
       >
-        <LazyGamePoster :id="game.id" :image="game.coverImage" class="w-full" />
+        <LazyGamePoster :id="index" :image="game.cover" class="w-full" />
       </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { IProductCardProp } from '~/types'
+import type { IGame } from '~/types'
 
 const props = defineProps<{
-  gamePoster: IProductCardProp[]
+  games: IGame[]
 }>()
 
 // get a nice angle

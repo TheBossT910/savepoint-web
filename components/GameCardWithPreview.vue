@@ -8,7 +8,7 @@
         <div class="relative rounded-2xl transition-all duration-300 w-[0%] md:w-[30%] hidden md:block">
             <!-- Image -->
             <img 
-            :src="props.coverImage"
+            :src="props.cover"
             class="w-full h-full object-cover rounded-2xl"
             loading="lazy"
             >
@@ -36,12 +36,12 @@
         </div>
 
         <!-- Video section -->
-        <div class="relative rounded-2xl transition-all duration-300 w-full md:w-[70%]">
+        <div v-if="props.videos" class="relative rounded-2xl transition-all duration-300 w-full md:w-[70%]">
             <!-- Video -->
             <div class="aspect-video">
                 <iframe 
                     class="w-full h-full object-cover rounded-2xl"
-                    src="https://www.youtube.com/embed/SKpSpvFCZRw" 
+                    :src="props.videos[0].url" 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -59,7 +59,8 @@
             <!-- Details -->
             <div class="h-auto pt-2 px-3">
                 <div class="flex text-gray-400 dm-sans-bold w-full text-[12px] md:text-[16px] lg:text-[20px]">
-                    {{ props.developers.join(', ') }}, {{ props.year }}
+                    <!-- TODO: add 'year' property to game -->
+                    {{ props.developers.map(developer => developer.name).join(', ') }}, 20XX
 
                     <!-- Owned badge -->
                     <div class="flex ml-auto bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] w-[58px] h-[22px] rounded-2xl font-outline dm-sans-bold text-white text-[12px] md:hidden">
@@ -77,20 +78,20 @@
                 </div>
 
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full text-[18px] md:text-[22px] lg:text-[26px]">
-                    {{ props.title }}
+                    {{ props.name }}
                 </div>
 
                 <div class="w-full flex flex-wrap gap-x-2 gap-y-2 p-2">
                     <img
-                    v-for="logo in props.platformLogos" :key="logo" 
-                    :src="logo"
+                    v-for="platform in props.platforms" :key="platform.id" 
+                    :src="platform.platformLogo"
                     class="mx-auto h-[10px] sm:h-[17px] dark:invert"
                     loading="lazy"
                     >
                 </div>
 
                 <div class="text-gray-400 dm-sans-bold w-full pb-2 text-[12px] md:text-[16px] lg:text-[20px]">
-                    {{ props.generes.join(', ') }}
+                    {{ props.genres.map(genre => genre.name).join(', ') }}
                 </div>
             </div>
         </div>
@@ -98,9 +99,9 @@
 </template>
 
 <script setup lang="ts">
-import type { IProductCardProp } from '~/types';
+import type { IGame } from '~/types';
 
-const props = defineProps<IProductCardProp>()
+const props = defineProps<IGame>()
 let card: HTMLElement | null = null
 
 onMounted(() => {
