@@ -104,7 +104,7 @@ const props = defineProps<IProductCardProp>()
 let card: HTMLElement | null = null
 
 onMounted(() => {
-    card = document.getElementById(`product-card-${props.id}`)
+    card = document.getElementById(`game-card-with-preview-${props.id}`)
     // add event listeners
     if (!card) return
     card.addEventListener("mousemove", mouseMove)
