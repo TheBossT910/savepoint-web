@@ -83,7 +83,7 @@
                     </div>
 
                     <!-- HLTB -->
-                    <div class="my-5 flex flex-wrap gap-2 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `600ms` }">
+                    <div v-if="game?.playTime" class="my-5 flex flex-wrap gap-2 opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `600ms` }">
                         <!-- Main -->
                         <div class="flex bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-md p-1 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
