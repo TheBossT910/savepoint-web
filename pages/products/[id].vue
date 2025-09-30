@@ -55,16 +55,6 @@
                                 Add to collection
                             </div>
                         </div>
-
-                        <!-- Watch trailer -->
-                        <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
-                            </svg>
-                            <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                                Watch trailer
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Platform badges-->
