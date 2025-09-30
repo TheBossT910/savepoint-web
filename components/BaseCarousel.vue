@@ -11,8 +11,8 @@
         <!-- Carousel -->
         <div class="relative flex rounded overflow-hidden space-x-4 p-4">
             <div v-for="(groupNumber, index) in groupSize" :id="`slide${ index }`" :key="index" class="flex space-x-4">  
-                <div v-for="(product, productIndex) in props.productCardProps.slice(index * displaySize, displaySize + (index * displaySize))" :key="productIndex" class="carousel-item w-65 md:w-70">
-                    <LazyGameCard :="product" />
+                <div v-for="game in props.games.slice(index * displaySize, displaySize + (index * displaySize))" :key="game.id" class="carousel-item w-65 md:w-70">
+                    <LazyGameCard :="game" />
                 </div>
             </div>
         </div>
@@ -24,10 +24,10 @@
     </div>
 </template>
 <script setup lang="ts">
-import type { IProductCardProp } from '~/types'
+import type { IGame } from '~/types'
 
 const props = defineProps<{
-    productCardProps: IProductCardProp[]
+    games: IGame[]
 }>()
 
 // dynamically changes depending on the viewport
@@ -62,7 +62,7 @@ const handleResize = () => {
     else displaySize.value = 1                       // <= sm
 
     // set group size
-    groupSize.value = Math.ceil(props.productCardProps.length / displaySize.value)
+    groupSize.value = Math.ceil(props.games.length / displaySize.value)
 }
 
 </script>
