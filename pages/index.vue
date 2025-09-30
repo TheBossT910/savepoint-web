@@ -133,7 +133,7 @@
                 </div>
             </div>
 
-            <LazyBaseCarousel :product-card-props="productCardProps"/>
+            <LazyBaseCarousel v-if="games" :games="games"/>            
 
             <div class="md:flex px-4">
                 <div class="md:w-[70%] flex">
@@ -146,12 +146,12 @@
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">All-Time Favourites</div>
-                <LazyBaseCarousel :product-card-props="productCardProps" />
+                <LazyBaseCarousel v-if="games" :games="games"/>     
             </div>
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Featured</div>
-                <LazyBaseCarousel :product-card-props="productCardProps" />
+                <LazyBaseCarousel v-if="games" :games="games"/>     
             </div>
 
             <div class="mt-10">
@@ -174,10 +174,16 @@
 </template>
 
 <script setup lang="ts">
-const loaded = ref(false)
+import { getGames } from '~/api/gamesService';
+import type { IGame, IProductCardProp } from '~/types';
 
-onMounted(() => {
+const loaded = ref(false)
+const games = ref<IGame[]>();
+
+onMounted(async () => {
   loaded.value = true
+  games.value = (await getGames()).data
+  console.log(games.value)
 })
 
 const productCardProps: IProductCardProp[] = [
