@@ -3,7 +3,7 @@
         <div class="relative py-30 px-2 sm:px-5 md:px-20">
             <!-- Splash image -->
             <img 
-            src="https://shared.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero_2x.jpg?t=1733297203" 
+            :src="splashGame?.splash" 
             alt=""
             class="absolute inset-0 h-full w-full object-cover">
 
@@ -13,7 +13,7 @@
             <div class="flex flex-col w-full h-full">
                 <!-- Title -->
                 <div class="flex dm-sans-bold text-[48px] text-white w-full h-auto z-1">
-                    Persona 5: Royal
+                    {{ splashGame?.name }}
                     <!-- Favorite badge -->
                     <div class="ml-2 flex items-center justify-center my-auto text-white dark-font-outline bg-[#EF4444]/70 border-[1px] border-[#F87171]/70 backdrop-blur-[5px] w-[22px] h-[22px] rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
@@ -24,23 +24,16 @@
 
                 <!-- Reviews -->
                 <div class="flex mt-2 ml-1 w-100 h-[20px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''">
-                    <!-- Metacritic -->
-                    <div class="flex backdrop-blur-[5px] rounded-2xl">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Metacritic_M.png" class="ml-1 h-[17px] my-auto">
-                        <div class="dm-sans-bold text-[12px] text-white ml-1">100/100</div>
-                    </div>
-
-                    <!-- IGN -->
-                    <div class="flex ml-5 backdrop-blur-[5px] rounded-2xl">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/IGN_logo.svg/2560px-IGN_logo.svg.png" class="h-[17px] my-auto">
-                        <div class="dm-sans-bold text-[12px] text-white ml-1">10/10</div>
+                    <div v-for="review in splashGame?.reviews" :key="review.id" class="flex px-2 z-1 rounded-xl">
+                        <img :src="review.logo" class="ml-1 h-[17px] my-auto">
+                        <div class="dm-sans-bold text-[12px] text-white ml-1">{{ review.rating }}</div>
                     </div>
                 </div>
 
                 <!-- Description -->
                 <div class="mt-5 w-full md:w-[50%] xl:w-[35%] bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }">
                     <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
-                        Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!
+                        {{ splashGame?.description }}
                     </div>
                 </div>
 
@@ -67,22 +60,26 @@
                     </div>
 
                     <!-- Watch trailer -->
-                    <div class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
+                    <div v-if="splashGame?.videos" class="flex bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] rounded-xl py-1 px-4 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="m-auto text-white mr-1" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
                         </svg>
-                        <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                            Watch trailer
-                        </div>
+                        <a :href="splashGame.videos[0].url" target="_blank">
+                            <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
+                                Watch trailer
+                            </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Platform badges-->
                 <div class="mt-10 flex gap-x-[16px] opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `600ms` }">
-                    <div v-for="logo in platformLogos" :key="logo" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
-                        <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
-                            <img :src="logo" class="h-[17px] invert">
-                        </div>
+                    <div v-for="platform in splashGame?.platforms" :key="platform.id" class="bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl py-1 px-2 transition-all duration-300">
+                        <a :href="platform.url" target="_blank">
+                            <div class="m-auto dm-sans-bold text-[14px] text-white uppercase">
+                                <img :src="platform.platformLogo" class="h-[17px] invert">
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -175,200 +172,18 @@
 
 <script setup lang="ts">
 import { getGames } from '~/api/gamesService';
-import type { IGame, IProductCardProp } from '~/types';
+import type { IGame } from '~/types';
 
 const loaded = ref(false)
 const games = ref<IGame[]>();
+const splashGame = ref<IGame>();
 
 onMounted(async () => {
   loaded.value = true
   games.value = (await getGames()).data
-  console.log(games.value)
+  
+  // Manually setting the splash image for now
+  // DEBUG: Persona 5: Royal, Metaphor: ReFantazio
+  splashGame.value = games.value!.find(game => game.name == 'Metaphor: ReFantazio')
 })
-
-const productCardProps: IProductCardProp[] = [
-    {
-        id: 0,
-        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
-        isOwned: false,
-        isFavorite: false,
-        developers: ['Atlus'],
-        year: 2024,
-        title: 'Persona 3: Reload',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-        ],
-        generes: ['Action', 'Adventure', 'Horror']
-    },
-    {
-        id: 1,
-        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
-        isOwned: true,
-        isFavorite: true,
-        developers: ['Nintendo'],
-        year: 2025,
-        title: 'Mario Kart World',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-        ],
-        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-    },
-     {
-        id: 2,
-        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
-        isOwned: false,
-        isFavorite: false,
-        developers: ['Atlus'],
-        year: 2024,
-        title: 'Persona 3: Reload',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-        ],
-        generes: ['Action', 'Adventure', 'Horror']
-    },
-    {
-        id: 3,
-        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
-        isOwned: true,
-        isFavorite: true,
-        developers: ['Nintendo'],
-        year: 2025,
-        title: 'Mario Kart World',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-        ],
-        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-    },
-     {
-        id: 4,
-        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
-        isOwned: false,
-        isFavorite: false,
-        developers: ['Atlus'],
-        year: 2024,
-        title: 'Persona 3: Reload',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-        ],
-        generes: ['Action', 'Adventure', 'Horror']
-    },
-    {
-        id: 5,
-        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
-        isOwned: true,
-        isFavorite: true,
-        developers: ['Nintendo'],
-        year: 2025,
-        title: 'Mario Kart World',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-        ],
-        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-    },
-     {
-        id: 6,
-        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
-        isOwned: false,
-        isFavorite: false,
-        developers: ['Atlus'],
-        year: 2024,
-        title: 'Persona 3: Reload',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-        ],
-        generes: ['Action', 'Adventure', 'Horror']
-    },
-    {
-        id: 7,
-        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
-        isOwned: true,
-        isFavorite: true,
-        developers: ['Nintendo'],
-        year: 2025,
-        title: 'Mario Kart World',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-        ],
-        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-    },
-     {
-        id: 8,
-        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
-        isOwned: false,
-        isFavorite: false,
-        developers: ['Atlus'],
-        year: 2024,
-        title: 'Persona 3: Reload',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-        ],
-        generes: ['Action', 'Adventure', 'Horror']
-    },
-    {
-        id: 9,
-        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
-        isOwned: true,
-        isFavorite: true,
-        developers: ['Nintendo'],
-        year: 2025,
-        title: 'Mario Kart World',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-        ],
-        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-    },
-     {
-        id: 10,
-        coverImage: 'https://shared.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg?t=1744328429',
-        isOwned: false,
-        isFavorite: false,
-        developers: ['Atlus'],
-        year: 2024,
-        title: 'Persona 3: Reload',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-            'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-        ],
-        generes: ['Action', 'Adventure', 'Horror']
-    },
-    {
-        id: 11,
-        coverImage: 'https://cdn2.steamgriddb.com/thumb/c2526ac91cf2dba8f8b1b58935c7597c.jpg',
-        isOwned: true,
-        isFavorite: true,
-        developers: ['Nintendo'],
-        year: 2025,
-        title: 'Mario Kart World',
-        platformLogos: [
-            'https://upload.wikimedia.org/wikipedia/commons/a/a8/Nintendo_Switch_2_logo_transparent_black.svg'
-        ],
-        generes: ['Action', 'Multiplayer', 'Racing', 'Open World', 'Family-Friendly', 'Party', '4-Player']
-    },
-]
-
-// for splash image
-const platformLogos = [
-    'https://upload.wikimedia.org/wikipedia/commons/7/7a/PS5_logo.png',
-    'https://upload.wikimedia.org/wikipedia/commons/8/87/PlayStation_4_logo_and_wordmark.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/e/e5/Xbox_Logo.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Steam_2016_logo_black.svg/800px-Steam_2016_logo_black.svg.png'
-]
-
 </script>
