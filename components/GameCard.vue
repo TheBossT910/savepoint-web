@@ -54,7 +54,7 @@
 
             <div class="text-gray-400 dm-sans-bold w-full text-[12px]">
                 <!-- TODO: add 'year' property to game -->
-                {{ props.game.developers.map(developer => developer.name).join(', ') }}, 20XX
+                {{ props.game.developers.map(developer => developer.name).join(', ') }}, {{ new Date(props.game.releaseDate).getUTCFullYear() }}
             </div>
         </div>
 
@@ -109,6 +109,6 @@ const mouseLeave = () => {
 }
 
 const goToProduct = () => {
-    router.push(`/products/${props.id}`)
+    router.push(`/products/${props.game.id}`)
 }
 </script>
