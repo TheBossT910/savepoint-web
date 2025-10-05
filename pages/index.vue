@@ -12,7 +12,7 @@
 
             <div class="flex flex-col w-full h-full">
                 <!-- Title -->
-                <div class="flex dm-sans-bold text-[48px] text-white w-full h-auto z-1">
+                <div class="flex dm-sans-bold text-[48px] text-white w-full h-auto z-1" @click="goToProduct(splashGame?.id)">
                     {{ splashGame?.name }}
                     <!-- Favorite badge -->
                     <div class="ml-2 flex items-center justify-center my-auto text-white dark-font-outline bg-[#EF4444]/70 border-[1px] border-[#F87171]/70 backdrop-blur-[5px] w-[22px] h-[22px] rounded-full">
@@ -31,7 +31,7 @@
                 </div>
 
                 <!-- Description -->
-                <div class="mt-5 w-full md:w-[50%] xl:w-[35%] bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }">
+                <div class="mt-5 w-full md:w-[50%] xl:w-[35%] bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl opacity-0 transition-opacity duration-700 ease-out" :class="loaded ? 'opacity-100' : ''" :style="{ transitionDelay: `200ms` }" @click="goToProduct(splashGame?.id)">
                     <div class="p-2 dm-sans-bold text-[14px] text-white font-outline">
                         {{ splashGame?.description }}
                     </div>
@@ -182,6 +182,7 @@
 import { getGames } from '~/api/gamesService';
 import { getRandomItem, getRandomSubset } from '~/helpers/utility';
 import type { IGame } from '~/types';
+const router = useRouter();
 
 const loaded = ref(false)
 const games = ref<IGame[]>();
@@ -204,4 +205,9 @@ onMounted(async () => {
     previewGame2.value = getRandomItem<IGame>(games.value)
   }
 })
+
+const goToProduct = (id: string | undefined) => {
+    if (id == undefined) return
+    router.push(`/products/${id}`)
+}
 </script>
