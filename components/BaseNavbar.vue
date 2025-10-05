@@ -132,8 +132,8 @@
             leave-to-class="opacity-0 translate-y-2"
         >
 
-            <div v-show="searchResultsPopupOpen" class="bg-base-300/0 border-base-300/20 rounded-lg border-[1px] backdrop-blur-[3px] h-[100vh] mt-2 overflow-y-auto" @click="searchResultsPopupOpen = false">
-                <div v-if="games" class="flex flex-col scale-75 gap-y-5 origin-top pt-5 rounded-lg h-[100vh]">
+            <div v-show="searchResultsPopupOpen" class="bg-base-300/0 border-base-300/20 rounded-lg border-[3px] backdrop-blur-[3px] mx-auto h-[93vh] w-[99vw] mt-2 overflow-y-auto" @click="searchResultsPopupOpen = false">
+                <div v-if="games" class="flex flex-col scale-75 gap-y-5 origin-top pt-5 pb-10 mb-5 rounded-lg h-full">
                     <div v-for="game in games" :key="game.id">
                         <List :="game"/>
                     </div> 

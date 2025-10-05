@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <LazyBaseCarousel v-if="games" :games="games"/>            
+            <LazyBaseCarousel v-if="games" :id="'main'" :games="games" />            
 
             <div v-if="previewGame1" class="md:flex px-4">
                 <div class="md:w-[70%] flex">
@@ -151,12 +151,12 @@
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">All-Time Favourites</div>
-                <LazyBaseCarousel v-if="games" :games="games"/>     
+                <LazyBaseCarousel v-if="games" :id="'all-time-favourites'" :games="games"/>     
             </div>
 
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Featured</div>
-                <LazyBaseCarousel v-if="games" :games="games"/>     
+                <LazyBaseCarousel v-if="games" :id="'featured'" :games="games"/>     
             </div>
 
             <div class="mt-10">

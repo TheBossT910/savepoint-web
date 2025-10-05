@@ -24,7 +24,7 @@
             <!-- All games -->
             <div class="grid gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
                 <div v-for="game in games" :key="game.id">  
-                    <LazyGameCard :="game" class="h-full"/>
+                    <LazyGameCard :id="`search-game-card-${game.id}`" :game="game" class="h-full"/>
                 </div>
             </div>
         </div>

@@ -5,21 +5,21 @@
     <div class="relative flex">
         <!-- Scroll left -->
         <div class="absolute flex h-[75%] pl-2 z-1">
-            <button class="btn m-auto" :disabled="!(groupPosition != 0)" @click="scrollToSlide(`slide${groupPosition - 1}`); groupPosition = groupPosition - 1;">❮</button>
+            <button class="btn m-auto" :disabled="!(groupPosition != 0)" @click="scrollToSlide(`slide-${props.id}-${groupPosition - 1}`); groupPosition = groupPosition - 1;">❮</button>
         </div>
 
         <!-- Carousel -->
         <div class="relative flex rounded overflow-hidden space-x-4 p-4">
-            <div v-for="(groupNumber, index) in groupSize" :id="`slide${ index }`" :key="index" class="flex space-x-4">  
-                <div v-for="game in props.games.slice(index * displaySize, displaySize + (index * displaySize))" :key="game.id" class="carousel-item w-65 md:w-70">
-                    <LazyGameCard :="game" />
+            <div v-for="(groupNumber, index) in groupSize" :id="`slide-${props.id}-${index}`" :key="index" class="flex space-x-4">  
+                <div v-for="game in props.games.slice(index * displaySize, displaySize + (index * displaySize))" :key="`slide-${props.id}-game-${game.id}`" class="carousel-item w-65 md:w-70">
+                    <LazyGameCard :id="`slide-${props.id}-game-card-${game.id}`" :game="game" />
                 </div>
             </div>
         </div>
 
         <!-- Scroll right -->
         <div class="absolute flex right-0 pr-2 h-[75%] z-1">
-            <button class="btn m-auto" :disabled="!(groupPosition + 1 != groupSize)" @click="scrollToSlide(`slide${groupPosition + 1}`); groupPosition = groupPosition + 1;">❯</button>
+            <button class="btn m-auto" :disabled="!(groupPosition + 1 != groupSize)" @click="scrollToSlide(`slide-${props.id}-${groupPosition + 1}`); groupPosition = groupPosition + 1;">❯</button>
         </div>
     </div>
 </template>
@@ -27,7 +27,8 @@
 import type { IGame } from '~/types'
 
 const props = defineProps<{
-    games: IGame[]
+    games: IGame[],
+    id: string
 }>()
 
 // dynamically changes depending on the viewport

@@ -7,7 +7,7 @@
         <div class="relative aspect-[2/3] rounded-2xl transition-all duration-300">
             <!-- Image -->
             <img 
-            :src="props.cover"
+            :src="props.game.cover"
             class="w-full aspect-[2/3] object-cover rounded-2xl"
             loading="lazy"
             >
@@ -20,10 +20,10 @@
             </div>
 
             <!-- Platform badges -->
-            <div v-if="props.platforms.length != 0" class="flex p-1 absolute left-2 right-2 bottom-18 bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] min-h-[25px] mx-auto rounded-2xl">
+            <div v-if="props.game.platforms.length != 0" class="flex p-1 absolute left-2 right-2 bottom-18 bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] min-h-[25px] mx-auto rounded-2xl">
                 <div class="w-full flex flex-wrap gap-x-2 gap-y-2 m-auto">
                     <img
-                    v-for="platform in props.platforms" :key="platform.id" 
+                    v-for="platform in props.game.platforms" :key="platform.id" 
                     :src="platform.platformLogo"
                     class="mx-auto max-h-[13px] my-1 invert"
                     loading="lazy"
@@ -49,18 +49,18 @@
         <!-- Content -->
         <div class="flex flex-col w-full px-1 py-1">
             <div class="text-base-900 dark-font-outline dm-sans-bold w-full text-[18px]">
-                {{ props.name }}
+                {{ props.game.name }}
             </div>
 
             <div class="text-gray-400 dm-sans-bold w-full text-[12px]">
                 <!-- TODO: add 'year' property to game -->
-                {{ props.developers.map(developer => developer.name).join(', ') }}, 20XX
+                {{ props.game.developers.map(developer => developer.name).join(', ') }}, 20XX
             </div>
         </div>
 
         <!-- Genres -->
         <div class="text-gray-400 dm-sans-bold w-full text-[12px] px-1 py-1 mt-auto">
-            {{ props.genres.map(genre => genre.name).join(', ') }}
+            {{ props.game.genres.map(genre => genre.name).join(', ') }}
         </div>
     </div>
 </template>
@@ -70,7 +70,10 @@ import type { IGame } from '~/types';
 
 let card: HTMLElement | null = null
 const router = useRouter();
-const props = defineProps<IGame>()
+const props = defineProps<{
+    game: IGame,
+    id: string
+}>()
 
 onMounted(() => {
     card = document.getElementById(`game-card-${props.id}`)
