@@ -5,7 +5,7 @@ import https from "~/server/https"
 import type { IGameCreate, IGameUpdate } from "~/types";
 
 // get all games
-export const getGames = () => https.get('games')
+export const getGames = (page: number, pageSize: number, category?: string, genre?: string, developer?:string) => https.get(`games?page=${page}&pageSize=${pageSize}&category=${category}&genre=${genre}&developer=${developer}`)
 
 // get specific game
 export const getGame = (gameId: string) => https.get(`games/${gameId}`)

@@ -4,4 +4,4 @@
 import https from "~/server/https"
 
 // search for games
-export const searchGames = () => https.get('search/games')
+export const searchGames = (searchTerm: string) => https.get(`search/games?searchTerm=${searchTerm}`)
