@@ -21,7 +21,8 @@ export interface IProductCardProp {
 
 export interface IGame {
     id: string  // GUID
-    dtc: Date
+    dtc: string
+    releaseDate: string
     name: string
     description: string
     cover: string
@@ -39,7 +40,8 @@ export interface IGame {
 }
 
 export interface IGameCreate {
-    dtc: Date
+    dtc: string
+    releaseDate: string
     name: string
     description: string
     cover: string
@@ -58,7 +60,8 @@ export interface IGameCreate {
 
 export interface IGameUpdate {
     id: string
-    dtc: Date
+    dtc: string
+    releaseDate: string
     name: string
     description: string
     cover: string
@@ -110,14 +113,14 @@ export interface IGameVariation {
 
 export interface IList {
     id: string  // GUID
-    dtc: Date
+    dtc: string
     name: string
     description: string
     games: IGame[]
 }
 
 export interface IListCreate {
-    dtc: Date
+    dtc: string
     name: string
     description: string
     gameIds: string[]   // GUIDs
@@ -125,7 +128,7 @@ export interface IListCreate {
 
 export interface IListUpdate {
     id: string  // GUID
-    dtc: Date
+    dtc: string
     name: string
     description: string
     gameIds: string[]   // GUIDs
@@ -133,14 +136,14 @@ export interface IListUpdate {
 
 export interface IStack {
     id: string  // GUID
-    dtc: Date
+    dtc: string
     name: string
     descripton: string
     games: IGame[]
 }
 
 export interface IStackCreate {
-    dtc: Date
+    dtc: string
     name: string
     descripton: string
     gameIds: string[]   // GUIDs
@@ -148,7 +151,7 @@ export interface IStackCreate {
 
 export interface IStackUpdate {
     id: string  // GUID
-    dtc: Date
+    dtc: string
     name: string
     descripton: string
     gameIds: string[]   // GUIDs
@@ -169,7 +172,7 @@ export interface IPlatform {
     hardware: string
     store?: string
     hardwareVariation?: string
-    releaseDate: Date
+    releaseDate: string
     platformLogo: string
     companyLogo?: string
     url?: string
