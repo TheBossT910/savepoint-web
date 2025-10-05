@@ -99,7 +99,7 @@
 
 <script setup lang="ts">
 import type { IGame } from '~/types';
-
+const router = useRouter();
 const props = defineProps<IGame>()
 let card: HTMLElement | null = null
 
@@ -137,6 +137,6 @@ const mouseLeave = () => {
 }
 
 const goToProduct = () => {
-    console.log('goToProduct clicked')
+    router.push(`/products/${props.id}`)
 }
 </script>
