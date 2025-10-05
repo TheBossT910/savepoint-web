@@ -103,7 +103,7 @@
             leave-to-class="opacity-0 translate-y-2"
         >
 
-            <div v-show="searchPopupOpen" class="bg-base-300/0 border-base-300/20 border-[1px] backdrop-blur-[3px] w-xl p-2 mt-2 rounded-full mx-auto">
+            <div v-show="searchPopupOpen" class="bg-base-300/0 border-base-300/20 border-[1px] backdrop-blur-[3px] w-full p-2 mt-2 rounded-full mx-auto">
                 <label class="flex input w-full gap-x-3">
                     <input v-model="searchText" type="search" placeholder="Search" class="grow" @keydown="search">
                     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
