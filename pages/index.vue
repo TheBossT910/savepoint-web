@@ -125,9 +125,9 @@
             <!-- See more button -->
             <div class="flex mt-2">
                 <div class="inline-flex ml-auto relative py-1 px-4 bg-[#10A4DA]/70 hover:bg-[#10A4DA] border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] rounded-xl transition-all duration-300">
-                    <span class="mx-auto dm-sans-bold text-[14px] text-white">
+                    <button class="mx-auto dm-sans-bold text-[14px] text-white" @click="seeMore">
                         See More >
-                    </span>
+                    </button>
                 </div>
             </div>
 
@@ -210,5 +210,9 @@ onMounted(async () => {
 const goToProduct = (id: string | undefined) => {
     if (id == undefined) return
     router.push(`/products/${id}`)
+}
+
+const seeMore = () => {
+    router.push(`/search`)
 }
 </script>
