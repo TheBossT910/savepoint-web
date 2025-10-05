@@ -3,7 +3,7 @@
 
 <template>
     <div>
-        <div class="flex h-[60px] bg-base-300/0 backdrop-blur-[3px] border-base-300/10 border-b-[1px] shadow-sm sticky top-0">
+        <div class="flex h-[60px] bg-base-300/0 backdrop-blur-[3px] border-base-300/10 border-b-[1px] shadow-sm sticky top-0" @click="searchResultsPopupOpen = false">
             <!-- SavePoint logo -->
             <div class="my-auto">
                 <!-- Dummy button to create space -->
@@ -33,7 +33,7 @@
 
             <div class="my-auto ml-auto">
                 <label class="hidden lg:flex input w-lg">
-                    <input type="search" placeholder="Search" class="grow">
+                    <input v-model="searchText" type="search" placeholder="Search" class="grow" @keydown="search">
                     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                         stroke-linejoin="round"
@@ -48,7 +48,6 @@
                     </svg>
                 </label>
             </div>
-
 
             <div class="my-auto ml-auto mr-2">
                 <!-- Extra small screen -->
@@ -69,7 +68,7 @@
 
                 <!-- Small screen -->
                 <label class="hidden md:flex lg:hidden input w-lg gap-x-3">
-                    <input type="search" placeholder="Search" class="grow">
+                    <input v-model="searchText" type="search" placeholder="Search" class="grow" @keydown="search">
                     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                         stroke-linejoin="round"
@@ -106,7 +105,7 @@
 
             <div v-show="searchPopupOpen" class="bg-base-300/0 border-base-300/20 border-[1px] backdrop-blur-[3px] w-xl p-2 mt-2 rounded-full mx-auto">
                 <label class="flex input w-full gap-x-3">
-                    <input type="search" placeholder="Search" class="grow">
+                    <input v-model="searchText" type="search" placeholder="Search" class="grow" @keydown="search">
                     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                         stroke-linejoin="round"
@@ -122,11 +121,35 @@
                 </label>
             </div>
         </Transition>
+
+        <!-- Search results pop-up -->
+        <Transition
+            enter-active-class="transition-all duration-200 ease-out"
+            enter-from-class="opacity-0 translate-y-2"
+            enter-to-class="opacity-100 translate-y-0"
+            leave-active-class="transition-all duration-150 ease-in"
+            leave-from-class="opacity-100 translate-y-0"
+            leave-to-class="opacity-0 translate-y-2"
+        >
+
+            <div v-show="searchResultsPopupOpen" class="bg-base-300/0 border-base-300/20 rounded-lg border-[1px] backdrop-blur-[3px] h-[100vh] mt-2 overflow-y-auto" @click="searchResultsPopupOpen = false">
+                <div v-if="games" class="flex flex-col scale-75 gap-y-5 origin-top pt-5 rounded-lg h-[100vh]">
+                    <div v-for="game in games" :key="game.id">
+                        <List :="game"/>
+                    </div> 
+                    <div v-if="games.length == 0">
+                        <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[48px]">No games found.</div>
+                        <div class="text-gray-400 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Try using a different search term.</div>
+                    </div>                
+                </div>
+            </div>
+        </Transition>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { Link } from '~/types';
+import { searchGames } from '~/api/searchService';
+import type { IGame, Link } from '~/types';
 
 // creating props
 const props = defineProps<{
@@ -134,4 +157,18 @@ const props = defineProps<{
 }>()
 
 const searchPopupOpen = ref(false)
+const searchResultsPopupOpen = ref(false)
+const games = ref<IGame[]>();
+const searchText = ref("");
+let debounceTimer = 0;
+
+const search = async () => {
+    searchResultsPopupOpen.value = false
+    if (debounceTimer) clearTimeout(debounceTimer)
+
+    debounceTimer = window.setTimeout(async () => {
+        games.value = (await searchGames(searchText.value)).data
+        searchResultsPopupOpen.value = true
+    }, 500)
+}
 </script>
