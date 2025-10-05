@@ -59,8 +59,7 @@
             <!-- Details -->
             <div class="h-auto pt-2 px-3">
                 <div class="flex text-gray-400 dm-sans-bold w-full text-[12px] md:text-[16px] lg:text-[20px]">
-                    <!-- TODO: add 'year' property to game -->
-                    {{ props.developers.map(developer => developer.name).join(', ') }}, 20XX
+                    {{ props.developers.map(developer => developer.name).join(', ') }}, {{ new Date(props.releaseDate).getUTCFullYear() }}
 
                     <!-- Owned badge -->
                     <div class="flex ml-auto bg-[#10A4DA]/70 border-[1px] border-[#26C1E0]/70 backdrop-blur-[5px] w-[58px] h-[22px] rounded-2xl font-outline dm-sans-bold text-white text-[12px] md:hidden">

@@ -64,13 +64,11 @@
                     <!-- Developers -->
                     <div class="flex flex-wrap items-center  dm-sans-bold min-h-[16px] text-[12px]">
                         <span class="hidden lg:flex text-gray-400">
-                            <!-- TODO: add year field -->
-                            {{ props.developers.map(developer => developer.name).join(', ') }}, 20XX
+                            {{ props.developers.map(developer => developer.name).join(', ') }}, {{ new Date(props.releaseDate).getUTCFullYear() }}
                         </span>
 
                         <span class="flex lg:hidden text-white font-outline">
-                            <!-- TODO: add year field -->
-                            {{ props.developers.map(developer => developer.name).join(', ') }}, 20XX
+                            {{ props.developers.map(developer => developer.name).join(', ') }}, {{ new Date(props.releaseDate).getUTCFullYear() }}
                         </span>
                     </div>
 
