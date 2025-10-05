@@ -16,7 +16,7 @@
             <!-- Buy button -->
            <div class="flex absolute left-0 right-0 bottom-2 bg-gradient-to-l from-[#26C1E0]/70 to-[#7B28E0]/70 hover:bg-[#7B28E0] border-[1px] border-[#9B5BE9]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[105px] w-[95%] mx-auto rounded-2xl transition-all duration-300 ease-out will-change-transform">
                 <div class="m-auto">
-                    $ Buy
+                    $ Buy (N/A)
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <!-- Buy button -->
             <div class="flex bg-[#9B5BE9]/70 border-[1px] border-[#7B28E0]/70 backdrop-blur-[5px] font-outline dm-sans-bold text-[12px] text-white h-[55px] w-full mx-auto rounded-2xl mt-2 md:hidden">
                 <div class="m-auto">
-                    $ Buy
+                    $ Buy (N/A)
                 </div>
             </div>
 

@@ -15,7 +15,7 @@
             <!-- Buy button -->
             <div class="flex absolute text-base-900 dark-font-outline bottom-0 bg-green-500/60 border-[1px] border-b-0 border-green-400/70 backdrop-blur-[5px] dm-sans-bold text-[12px] w-full h-[48px] rounded-t-[12px]">
                 <div class="m-auto">
-                    $ Buy
+                    $ Buy (N/A)
                 </div>
             </div>
 
