@@ -178,9 +178,13 @@ const loaded = ref(false)
 const games = ref<IGame[]>();
 const splashGame = ref<IGame>();
 
+// TODO: automatically set these
+const page = 0;
+const pageSize = 10;
+
 onMounted(async () => {
   loaded.value = true
-  games.value = (await getGames()).data
+  games.value = (await getGames(page, pageSize)).data
   
   // Manually setting the splash image for now
   // DEBUG: Persona 5: Royal, Metaphor: ReFantazio
