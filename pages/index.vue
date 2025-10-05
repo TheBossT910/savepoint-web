@@ -132,12 +132,20 @@
 
             <LazyBaseCarousel v-if="games" :games="games"/>            
 
-            <div class="md:flex px-4">
+            <div v-if="previewGame1" class="md:flex px-4">
                 <div class="md:w-[70%] flex">
-                    <LazyGameCardWithPreview v-if="games" :="games.find(game => game.name == 'Metaphor: ReFantazio')!" class="m-auto w-full"/>
+                    <LazyGameCardWithPreview :="previewGame1" class="m-auto w-full"/>
                 </div>
                 <div class="md:w-[30%] flex">
-                    <LazyGameStack v-if="games" :games="games" class="m-auto"/>
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
+                </div>
+            </div>
+            <div v-else class="mt-10">
+                <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Everyone's Playing</div>
+                <div class="sm:flex gap-x-10 px-4">
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
                 </div>
             </div>
 
@@ -154,16 +162,16 @@
             <div class="mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Staff-Favourite Stacks</div>
                 <div class="sm:flex gap-x-10 px-4">
-                    <LazyGameStack v-if="games" :games="games" class="m-auto"/>
-                    <LazyGameStack v-if="games" :games="games" class="m-auto"/>
-                    <LazyGameStack v-if="games" :games="games" class="m-auto"/>
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
+                    <LazyGameStack v-if="games" :games="getRandomSubset<IGame>(games)" class="m-auto"/>
                 </div>
             </div>
 
-            <div class="flex flex-col mt-10">
+            <div  v-if="previewGame2" class="flex flex-col mt-10">
                 <div class="text-base-900 dark-font-outline dm-sans-bold w-full pl-4 min-h-[23px] text-[36px]">Recommended</div>
                 <div class="px-4">
-                    <LazyGameCardWithPreview v-if="games" :="games.find(game => game.name == 'Persona 5: Royal')!" class="m-auto w-full"/>
+                    <LazyGameCardWithPreview :="previewGame2" class="m-auto w-full"/>
                 </div>
             </div>
         </div>
@@ -172,22 +180,28 @@
 
 <script setup lang="ts">
 import { getGames } from '~/api/gamesService';
+import { getRandomItem, getRandomSubset } from '~/helpers/utility';
 import type { IGame } from '~/types';
 
 const loaded = ref(false)
 const games = ref<IGame[]>();
+
 const splashGame = ref<IGame>();
+const previewGame1 = ref<IGame>();
+const previewGame2 = ref<IGame>();
 
 // TODO: automatically set these
 const page = 0;
-const pageSize = 10;
+const pageSize = 50;
 
 onMounted(async () => {
   loaded.value = true
   games.value = (await getGames(page, pageSize)).data
   
-  // Manually setting the splash image for now
-  // DEBUG: Persona 5: Royal, Metaphor: ReFantazio
-  splashGame.value = games.value!.find(game => game.name == 'Metaphor: ReFantazio')
+  if (games.value != undefined) {
+    splashGame.value = getRandomItem<IGame>(games.value)
+    previewGame1.value = getRandomItem<IGame>(games.value)
+    previewGame2.value = getRandomItem<IGame>(games.value)
+  }
 })
 </script>
