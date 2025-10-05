@@ -135,10 +135,10 @@
 
         <div class="relative w-full">
             <!-- Image container -->
-            <div v-if="game?.images" class="sticky inset-0 w-full h-full z-0 bg-black space-y-4">
-                <InfiniteScroll :images="game.images.map(images => images.url).slice(0, 3)" :height="'33vh'" :duration="180" :poster="false"/>
-                <InfiniteScroll :images="game.images.map(images => images.url).slice(3, 6)" :height="'33vh'" :duration="180" :poster="false" reverse/>
-                <InfiniteScroll :images="game.images.map(images => images.url).slice(6)" :height="'33vh'" :duration="180" :poster="false"/>
+            <div v-if="imageArrays" class="sticky inset-0 w-full h-full z-0 bg-black space-y-4">
+                <InfiniteScroll :images="imageArrays[0]" :height="'33vh'" :duration="180" :poster="false"/>
+                <InfiniteScroll :images="imageArrays[1]" :height="'33vh'" :duration="180" :poster="false" reverse/>
+                <InfiniteScroll :images="imageArrays[2]" :height="'33vh'" :duration="180" :poster="false"/>
             </div>
 
             <!-- Dummy hidden description -->
@@ -179,15 +179,19 @@
 
 <script setup lang="ts">
 import { getGame } from '~/api/gamesService';
+import { shuffleArray, splitArrayEvenly } from '~/helpers/utility';
 import type { IGame } from '~/types';
 
 const route = useRoute()
 const loaded = ref(false)
 const game = ref<IGame>();
+const imageArrays = ref<string[][]>();
 
 onMounted(async () => {
   loaded.value = true
   const id = Array.isArray(route.params.id) ? route.params.id[0] : route.params.id
   game.value = (await getGame(id)).data
+  if (game.value != undefined)
+    imageArrays.value = splitArrayEvenly(shuffleArray<string>(game.value.images.map(images => images.url))!, 3)
 })
 </script>
