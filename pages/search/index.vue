@@ -40,7 +40,7 @@ const games = ref<IGame[]>();
 
 // TODO: automatically set these
 const page = 0;
-const pageSize = 50;
+const pageSize = 100;
 
 onMounted(async () => {
     loaded.value = true
