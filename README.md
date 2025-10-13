@@ -87,16 +87,15 @@ SavePoint bridges that gap.
 - Nuxt 3 (Vue 3 + Vite)
 
 **Backend**
-- Express.js (custom REST API)
+- ASP.NET Core
 
 **Database**
-- Supabase
+- MS SQL
 
 **Third-Party APIs**
-- RAWG
 - IGDB
-- PriceCharting (web scraping)
-- eBay (web scraping)
+- PriceCharting (web scraping - coming soon)
+- eBay (web scraping - coming soon)
 
 ---
 
